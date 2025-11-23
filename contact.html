@@ -150,7 +150,37 @@
               <h3>Get In Touch</h3>
               <p>Send me a message and I’ll get back to you shortly.</p>
 
-              <form action="https://formspree.io/f/xkgekqrw" method="POST" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              <form 
+                action="https://formspree.io/f/xkgekqrw" 
+                method="POST" 
+                class="php-email-form" 
+                data-aos="fade-up" 
+                data-aos-delay="200"
+              >
+              
+                <div class="row gy-4">
+              
+                  <div class="col-md-6">
+                    <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                  </div>
+              
+                  <div class="col-md-6">
+                    <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                  </div>
+              
+                </div>
+              
+                <input type="text" name="subject" class="form-control mt-3" placeholder="Subject" required>
+              
+                <textarea name="message" class="form-control mt-3" rows="6" placeholder="Message" required></textarea>
+              
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              
+                <button type="submit" class="btn btn-primary mt-3">Send Message</button>
+              </form>
+
                 <div class="row gy-4">
 
                   <div class="col-md-6">
