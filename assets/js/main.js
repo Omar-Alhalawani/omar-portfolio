@@ -180,15 +180,13 @@
 
   /* ------------------------------------------------------------------
       FORM HANDLER — UPDATED FOR FORMSPREE
-  ------------------------------------------------------------------ */
-  document.addEventListener("DOMContentLoaded", function () {
+------------------------------------------------------------------ */
+document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector(".php-email-form");
 
   if (form) {
     form.addEventListener("submit", async function (e) {
       e.preventDefault();
-
-      let formData = new FormData(form);
 
       // UI elements
       let loading = form.querySelector(".loading");
@@ -202,29 +200,20 @@
       try {
         const response = await fetch("https://formspree.io/f/xkgekqrw", {
           method: "POST",
-          body: formData,
+          body: new FormData(form),
           headers: { Accept: "application/json" }
         });
 
         loading.style.display = "none";
 
         if (response.ok) {
-          // SUCCESS
           sentMessage.style.display = "block";
           form.reset();
         } else {
           const result = await response.json();
-        
-          // If Formspree responded with ok:true, treat as success
-          if (result.ok) {
-            sentMessage.style.display = "block";
-            form.reset();
-          } else {
-            errorMessage.textContent = result.error || "Something went wrong.";
-            errorMessage.style.display = "block";
-          }
+          errorMessage.textContent = result.error || "Something went wrong.";
+          errorMessage.style.display = "block";
         }
-
       } catch (err) {
         loading.style.display = "none";
         errorMessage.textContent = "Error sending message. Please try again.";
