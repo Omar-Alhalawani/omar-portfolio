@@ -178,20 +178,21 @@
    */
   const glightbox = GLightbox({ selector: '.glightbox' });
 
-  /* ------------------------------------------------------------------
+    /* ------------------------------------------------------------------
       FORM HANDLER — UPDATED FOR FORMSPREE
------------------------------------------------------------------- */
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.querySelector(".php-email-form");
+  ------------------------------------------------------------------ */
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector(".php-email-form");
+    if (!form) return;
 
-  if (form) {
     form.addEventListener("submit", async function (e) {
       e.preventDefault();
+      e.stopImmediatePropagation(); // ⬅ block the old template handler
 
       // UI elements
-      let loading = form.querySelector(".loading");
-      let errorMessage = form.querySelector(".error-message");
-      let sentMessage = form.querySelector(".sent-message");
+      const loading = form.querySelector(".loading");
+      const errorMessage = form.querySelector(".error-message");
+      const sentMessage = form.querySelector(".sent-message");
 
       loading.style.display = "block";
       errorMessage.style.display = "none";
@@ -220,7 +221,5 @@ document.addEventListener("DOMContentLoaded", function () {
         errorMessage.style.display = "block";
       }
     });
-  }
-});
+  });
 })();
-
