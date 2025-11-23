@@ -181,46 +181,49 @@
   /* ------------------------------------------------------------------
       FORM HANDLER — UPDATED FOR FORMSPREE
   ------------------------------------------------------------------ */
-  const form = document.querySelector('.php-email-form');
+  document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector(".php-email-form");
 
   if (form) {
-    form.addEventListener('submit', async function(e) {
+    form.addEventListener("submit", async function (e) {
       e.preventDefault();
 
-      const formData = new FormData(form);
-      const loading = form.querySelector('.loading');
-      const errorMessage = form.querySelector('.error-message');
-      const sentMessage = form.querySelector('.sent-message');
+      let formData = new FormData(form);
 
-      loading.style.display = 'block';
-      errorMessage.style.display = 'none';
-      sentMessage.style.display = 'none';
+      // UI elements
+      let loading = form.querySelector(".loading");
+      let errorMessage = form.querySelector(".error-message");
+      let sentMessage = form.querySelector(".sent-message");
+
+      loading.style.display = "block";
+      errorMessage.style.display = "none";
+      sentMessage.style.display = "none";
 
       try {
         const response = await fetch("https://formspree.io/f/xkgekqrw", {
           method: "POST",
           body: formData,
-          headers: { "Accept": "application/json" }
+          headers: { Accept: "application/json" }
         });
 
-        const result = await response.json();
-        loading.style.display = 'none';
+        loading.style.display = "none";
 
         if (response.ok) {
-          sentMessage.style.display = 'block';
+          // SUCCESS
+          sentMessage.style.display = "block";
           form.reset();
         } else {
-          errorMessage.style.display = 'block';
-          errorMessage.textContent = result.error || "Error submitting form";
+          // Formspree returns JSON even on success sometimes
+          const result = await response.json();
+          errorMessage.textContent = result.error || "Something went wrong.";
+          errorMessage.style.display = "block";
         }
-
       } catch (err) {
-        loading.style.display = 'none';
-        errorMessage.style.display = 'block';
-        errorMessage.textContent = "Unexpected error occurred.";
+        loading.style.display = "none";
+        errorMessage.textContent = "Error sending message. Please try again.";
+        errorMessage.style.display = "block";
       }
-
     });
   }
+});
 
-})();
