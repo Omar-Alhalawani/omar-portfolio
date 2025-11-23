@@ -37,20 +37,20 @@ This site showcases my work in embedded systems, robotics, FPGA/digital logic, P
 
 ## 📂 Structure
 
-.
-├── index.html
-├── about.html
-├── portfolio.html
-├── portfolio-details.html
-├── resume.html
-├── services.html
-├── contact.html
-├── assets/
-│ ├── css/
-│ ├── js/
-│ ├── img/
-│ ├── vendor/
-└── README.md
+-.
+-├── index.html
+-├── about.html
+-├── portfolio.html
+-├── portfolio-details.html
+-├── resume.html
+-├── services.html
+-├── contact.html
+-├── assets/
+-│ ├── css/
+-│ ├── js/
+-│ ├── img/
+-│ ├── vendor/
+-└── README.md
 
 ---
 
