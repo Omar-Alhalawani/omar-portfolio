@@ -3,7 +3,7 @@
 Welcome to the repository for my personal engineering portfolio website.
 
 🌐 **Live Website:**  
-👉 [https://omar-alhalawani.github.io/](https://omar-alhalawani.github.io/omar-portfolio/)
+👉 [https://omar-alhalawani.github.io/omar-portfolio/](https://omar-alhalawani.github.io/omar-portfolio/)
 
 This site showcases my work in embedded systems, robotics, FPGA/digital logic, Python tooling, and community leadership.
 
@@ -69,7 +69,7 @@ This site showcases my work in embedded systems, robotics, FPGA/digital logic, P
 ## 📬 Contact
 
 - **Email:** omar.alhalawani2006@gmail.com  
-- **Website:** [https://omar-alhalawani.github.io/](https://omar-alhalawani.github.io/omar-portfolio/)
+- **Website:** [https://omar-alhalawani.github.io/omar-portfolio/](https://omar-alhalawani.github.io/omar-portfolio/)
 
 ---
 
