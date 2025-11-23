@@ -213,11 +213,18 @@
           sentMessage.style.display = "block";
           form.reset();
         } else {
-          // Formspree returns JSON even on success sometimes
           const result = await response.json();
-          errorMessage.textContent = result.error || "Something went wrong.";
-          errorMessage.style.display = "block";
+        
+          // If Formspree responded with ok:true, treat as success
+          if (result.ok) {
+            sentMessage.style.display = "block";
+            form.reset();
+          } else {
+            errorMessage.textContent = result.error || "Something went wrong.";
+            errorMessage.style.display = "block";
+          }
         }
+
       } catch (err) {
         loading.style.display = "none";
         errorMessage.textContent = "Error sending message. Please try again.";
