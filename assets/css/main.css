@@ -2911,3 +2911,44 @@ section,
   display: block;
 }
 
+/*--------------------------------------------------------------
+# Portfolio - Whole Card Clickable (No overlay icons)
+--------------------------------------------------------------*/
+
+/* Make the whole card clickable without changing typography/colors */
+.portfolio .portfolio-link{
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Keep your hover lift + shadow on the card */
+.portfolio .portfolio-link:hover{
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Optional: slightly stronger “clickable” affordance */
+.portfolio .portfolio-link:focus-visible .portfolio-card{
+  outline: 3px solid color-mix(in srgb, var(--accent-color), transparent 60%);
+  outline-offset: 4px;
+}
+
+/* Since we removed overlay buttons, disable any overlay behavior */
+.portfolio .portfolio-card:hover .portfolio-img .portfolio-overlay{
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Prevent image from stealing clicks; the <a> should handle the click */
+.portfolio .portfolio-card img{
+  pointer-events: none;
+}
+
+/* If any old overlay markup still exists somewhere, hide it completely */
+.portfolio .portfolio-overlay,
+.portfolio .portfolio-lightbox,
+.portfolio .portfolio-details-link{
+  display: none !important;
+}
+
