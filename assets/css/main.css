@@ -2953,11 +2953,18 @@ section,
 }
 
 
-/* Project details accordion: make bullet text readable on dark background */
-.portfolio-details .accordion-body ul,
-.portfolio-details .accordion-body ul li {
+/* Make accordion bullet lists readable on dark project cards */
+.portfolio-details-page .portfolio-details .accordion-body ul,
+.portfolio-details-page .portfolio-details .accordion-body li {
   color: inherit !important;
   opacity: 1 !important;
 }
+
+/* Make the bullet marker readable too */
+.portfolio-details-page .portfolio-details .accordion-body li::marker {
+  color: inherit !important;
+  opacity: 1 !important;
+}
+
 
 
