@@ -4,9 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Portfolio Details - FolioOne Bootstrap Template</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>Project Details - Omar Alhalawani</title>
+  <meta name="description" content="Project details for Omar Alhalawani's engineering portfolio—embedded systems, robotics, FPGA/digital logic, and Python automation tools.">
+  <meta name="keywords" content="Omar Alhalawani, Projects, Embedded, FPGA, Verilog, Robotics, Python, Data Acquisition, Engineering Portfolio">
+  <meta name="author" content="Omar Alhalawani">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -26,14 +27,6 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: FolioOne
-  * Template URL: https://bootstrapmade.com/folioone-bootstrap-portfolio-website-template/
-  * Updated: Aug 23 2025 with Bootstrap v5.3.7
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body class="portfolio-details-page">
@@ -41,45 +34,22 @@
   <header id="header" class="header d-flex align-items-center light-background sticky-top">
     <div class="container position-relative d-flex align-items-center justify-content-between">
 
-      <!-- <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-      <img src="assets/img/logo.webp" alt="">
-      <h1 class="sitename">FolioOne</h1> 
-    </a> -->
-
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="resume.html">Resume</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
           <li><a href="services.html">Services</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
       <div class="header-social-links">
-        <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        <a href="https://github.com/Omar-Alhalawani" class="github" target="_blank" rel="noopener"><i class="bi bi-github"></i></a>
+        <a href="https://linkedin.com/in/omar-alhalawani" class="linkedin" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i></a>
+        <a href="mailto:omar.alhalawani2006@gmail.com" class="email"><i class="bi bi-envelope"></i></a>
       </div>
 
     </div>
@@ -87,18 +57,20 @@
 
   <main class="main">
 
-    <!-- Portfolio Details Section -->
-    <section id="portfolio-details" class="portfolio-details section">
-
-      <!-- Section Title -->
+    <!-- =======================================================
+      PROJECT 1: EMG
+    ======================================================== -->
+    <section id="emg" class="portfolio-details section">
       <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio Details</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam</p>
-      </div><!-- End Section Title -->
+        <h2>EMG Signal Acquisition &amp; Processing</h2>
+        <p>
+          A complete EMG pipeline—sensor capture, microcontroller streaming, and Python processing/visualization for clean, usable muscle-signal data.
+        </p>
+      </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="row gy-4">
+
           <div class="col-lg-6" data-aos="fade-right">
             <div class="portfolio-details-media">
               <div class="main-image">
@@ -106,136 +78,111 @@
                   <script type="application/json" class="swiper-config">
                     {
                       "loop": true,
-                      "speed": 1000,
-                      "autoplay": {
-                        "delay": 6000
-                      },
-                      "effect": "creative",
-                      "creativeEffect": {
-                        "prev": {
-                          "shadow": true,
-                          "translate": [0, 0, -400]
-                        },
-                        "next": {
-                          "translate": ["100%", 0, 0]
-                        }
-                      },
+                      "speed": 900,
+                      "autoplay": { "delay": 5500 },
                       "slidesPerView": 1,
-                      "navigation": {
-                        "nextEl": ".swiper-button-next",
-                        "prevEl": ".swiper-button-prev"
-                      }
+                      "navigation": { "nextEl": ".swiper-button-next", "prevEl": ".swiper-button-prev" }
                     }
                   </script>
+
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/portfolio-5.webp" alt="Portfolio Image" class="img-fluid">
-                    </div>
-                    <div class="swiper-slide">
-                      <img src="assets/img/portfolio/portfolio-7.webp" alt="Portfolio Image" class="img-fluid">
-                    </div>
-                    <div class="swiper-slide">
-                      <img src="assets/img/portfolio/portfolio-8.webp" alt="Portfolio Image" class="img-fluid">
+                      <img src="assets/img/portfolio/portfolio-emg.webp" alt="EMG Project Cover" class="img-fluid">
                     </div>
                   </div>
+
                   <div class="swiper-button-prev"></div>
                   <div class="swiper-button-next"></div>
                 </div>
               </div>
 
-              <div class="thumbnail-grid" data-aos="fade-up" data-aos-delay="200">
-                <div class="row g-2 mt-3">
-                  <div class="col-3">
-                    <img src="assets/img/portfolio/portfolio-4.webp" alt="Gallery Image" class="img-fluid glightbox">
-                  </div>
-                  <div class="col-3">
-                    <img src="assets/img/portfolio/portfolio-6.webp" alt="Gallery Image" class="img-fluid glightbox">
-                  </div>
-                  <div class="col-3">
-                    <img src="assets/img/portfolio/portfolio-11.webp" alt="Gallery Image" class="img-fluid glightbox">
-                  </div>
-                  <div class="col-3">
-                    <img src="assets/img/portfolio/portfolio-12.webp" alt="Gallery Image" class="img-fluid glightbox">
-                  </div>
-                </div>
-              </div>
-
               <div class="tech-stack-badges" data-aos="fade-up" data-aos-delay="300">
-                <span>Angular</span>
-                <span>Express.js</span>
-                <span>PostgreSQL</span>
-                <span>GraphQL</span>
-                <span>Firebase</span>
+                <span>MyoWare</span>
+                <span>Arduino</span>
+                <span>Python</span>
+                <span>Signal Filtering</span>
+                <span>Visualization</span>
               </div>
             </div>
           </div>
 
           <div class="col-lg-6" data-aos="fade-left">
             <div class="portfolio-details-content">
+
               <div class="project-meta">
                 <div class="badge-wrapper">
-                  <span class="project-badge">UX/UI Design</span>
+                  <span class="project-badge">Embedded + Python</span>
                 </div>
                 <div class="date-client">
                   <div class="meta-item">
-                    <i class="bi bi-calendar-check"></i>
-                    <span>September 2024</span>
+                    <i class="bi bi-tags"></i>
+                    <span>Biomedical • DAQ</span>
                   </div>
                   <div class="meta-item">
-                    <i class="bi bi-buildings"></i>
-                    <span>DigitalCraft Solutions</span>
+                    <i class="bi bi-cpu"></i>
+                    <span>Real-time Data Stream</span>
                   </div>
                 </div>
               </div>
 
-              <h2 class="project-title">Innovative Financial Dashboard App</h2>
+              <h2 class="project-title">From Raw EMG to Clean Features</h2>
 
               <div class="project-website">
                 <i class="bi bi-link-45deg"></i>
-                <a href="#" target="_blank">projectwebsite.example.com</a>
+                <a href="projects.html" target="_self">Back to Projects</a>
               </div>
 
               <div class="project-overview">
                 <p class="lead">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Aenean eu enim justo. Vestibulum aliquam hendrerit molestie.
+                  I built a reliable acquisition + analysis workflow for EMG signals: capturing raw sensor output, streaming it through a microcontroller,
+                  and processing it in Python for visualization and feature extraction. The goal was stable, repeatable signals that are actually usable in applications.
                 </p>
 
-                <div class="accordion project-accordion" id="portfolio-details-projectAccordion">
+                <div class="accordion project-accordion" id="acc-emg">
                   <div class="accordion-item" data-aos="fade-up">
                     <h2 class="accordion-header">
-                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#portfolio-details-collapse-1" aria-expanded="true" aria-controls="collapseOne">
-                        <i class="bi bi-clipboard-data me-2"></i> Project Overview
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#emg-collapse-1" aria-expanded="true">
+                        <i class="bi bi-clipboard-data me-2"></i> What I Built
                       </button>
                     </h2>
-                    <div id="portfolio-details-collapse-1" class="accordion-collapse collapse show" data-bs-parent="#portfolio-details-projectAccordion">
+                    <div id="emg-collapse-1" class="accordion-collapse collapse show" data-bs-parent="#acc-emg">
                       <div class="accordion-body">
-                        <p>Cras ultricies ligula sed magna dictum porta. Nulla quis lorem ut libero malesuada feugiat. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+                        <p>
+                          A complete EMG workflow: sensor capture → microcontroller streaming → Python processing. It includes live plotting, noise reduction,
+                          and computation of basic signal metrics for tracking muscle activity consistently across trials.
+                        </p>
                       </div>
                     </div>
                   </div>
 
                   <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
                     <h2 class="accordion-header">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#portfolio-details-collapse-2" aria-expanded="false" aria-controls="collapseTwo">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#emg-collapse-2">
                         <i class="bi bi-exclamation-diamond me-2"></i> The Challenge
                       </button>
                     </h2>
-                    <div id="portfolio-details-collapse-2" class="accordion-collapse collapse" data-bs-parent="#portfolio-details-projectAccordion">
+                    <div id="emg-collapse-2" class="accordion-collapse collapse" data-bs-parent="#acc-emg">
                       <div class="accordion-body">
-                        <p>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Sed porttitor lectus nibh.</p>
+                        <p>
+                          EMG is noisy and inconsistent by nature. The main challenges were stabilizing the capture, reducing motion/line noise,
+                          and producing plots/features that reflect real muscle activation rather than artifacts.
+                        </p>
                       </div>
                     </div>
                   </div>
 
                   <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
                     <h2 class="accordion-header">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#portfolio-details-collapse-3" aria-expanded="false" aria-controls="collapseThree">
-                        <i class="bi bi-award me-2"></i> The Solution
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#emg-collapse-3">
+                        <i class="bi bi-award me-2"></i> What I Learned
                       </button>
                     </h2>
-                    <div id="portfolio-details-collapse-3" class="accordion-collapse collapse" data-bs-parent="#portfolio-details-projectAccordion">
+                    <div id="emg-collapse-3" class="accordion-collapse collapse" data-bs-parent="#acc-emg">
                       <div class="accordion-body">
-                        <p>Donec sollicitudin molestie malesuada. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.</p>
+                        <p>
+                          How to design a system that’s “lab reliable”: consistent sampling, clean data paths, repeatable processing,
+                          and clear visualization that supports decision-making.
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -247,46 +194,704 @@
                 <div class="row g-3">
                   <div class="col-md-6">
                     <ul class="feature-list">
-                      <li><i class="bi bi-check2-circle"></i> Real-time Data Visualization</li>
-                      <li><i class="bi bi-check2-circle"></i> User Role Management</li>
-                      <li><i class="bi bi-check2-circle"></i> Secure Authentication</li>
+                      <li><i class="bi bi-check2-circle"></i> Reliable EMG data streaming</li>
+                      <li><i class="bi bi-check2-circle"></i> Live plotting + monitoring</li>
+                      <li><i class="bi bi-check2-circle"></i> Filtering / noise reduction</li>
                     </ul>
                   </div>
                   <div class="col-md-6">
                     <ul class="feature-list">
-                      <li><i class="bi bi-check2-circle"></i> Customizable Dashboards</li>
-                      <li><i class="bi bi-check2-circle"></i> Data Export Options</li>
-                      <li><i class="bi bi-check2-circle"></i> Multi-device Support</li>
+                      <li><i class="bi bi-check2-circle"></i> Feature extraction basics</li>
+                      <li><i class="bi bi-check2-circle"></i> Repeatable measurement workflow</li>
+                      <li><i class="bi bi-check2-circle"></i> Clean, portfolio-ready tooling</li>
                     </ul>
                   </div>
                 </div>
               </div>
 
               <div class="cta-buttons" data-aos="fade-up" data-aos-delay="400">
-                <a href="#" class="btn-view-project">View Live Project</a>
-                <a href="#" class="btn-next-project">Next Project <i class="bi bi-arrow-right"></i></a>
+                <a href="projects.html" class="btn-view-project">View All Projects</a>
+                <a href="#robot-car" class="btn-next-project">Next Project <i class="bi bi-arrow-right"></i></a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =======================================================
+      PROJECT 2: ROBOT CAR
+    ======================================================== -->
+    <section id="robot-car" class="portfolio-details section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Autonomous / IoT Robotic Car</h2>
+        <p>
+          An embedded robotics platform with motor control, sensors, and wireless control—built to be modular, testable, and easy to extend.
+        </p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="portfolio-details-media">
+              <div class="main-image">
+                <div class="portfolio-details-slider swiper init-swiper" data-aos="zoom-in">
+                  <script type="application/json" class="swiper-config">
+                    {
+                      "loop": true,
+                      "speed": 900,
+                      "autoplay": { "delay": 5500 },
+                      "slidesPerView": 1,
+                      "navigation": { "nextEl": ".swiper-button-next", "prevEl": ".swiper-button-prev" }
+                    }
+                  </script>
+
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="assets/img/portfolio/portfolio-robot-car.webp" alt="Robotic Car Project Cover" class="img-fluid">
+                    </div>
+                  </div>
+
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                </div>
+              </div>
+
+              <div class="tech-stack-badges" data-aos="fade-up" data-aos-delay="300">
+                <span>Arduino</span>
+                <span>Motor Driver</span>
+                <span>Sensors</span>
+                <span>Wireless Control</span>
+                <span>Embedded Debugging</span>
               </div>
             </div>
           </div>
-        </div>
 
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="portfolio-details-content">
+
+              <div class="project-meta">
+                <div class="badge-wrapper">
+                  <span class="project-badge">Robotics</span>
+                </div>
+                <div class="date-client">
+                  <div class="meta-item">
+                    <i class="bi bi-tags"></i>
+                    <span>Embedded • IoT</span>
+                  </div>
+                  <div class="meta-item">
+                    <i class="bi bi-gear"></i>
+                    <span>Control + Integration</span>
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="project-title">Motor Control, Sensing, and Wireless Control</h2>
+
+              <div class="project-website">
+                <i class="bi bi-link-45deg"></i>
+                <a href="projects.html" target="_self">Back to Projects</a>
+              </div>
+
+              <div class="project-overview">
+                <p class="lead">
+                  I designed a small robotic-car platform around a microcontroller, focusing on reliable motor control, clean wiring,
+                  modular sensor integration, and a wireless control path for remote operation and testing.
+                </p>
+
+                <div class="accordion project-accordion" id="acc-robot">
+                  <div class="accordion-item" data-aos="fade-up">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#robot-collapse-1" aria-expanded="true">
+                        <i class="bi bi-clipboard-data me-2"></i> What I Built
+                      </button>
+                    </h2>
+                    <div id="robot-collapse-1" class="accordion-collapse collapse show" data-bs-parent="#acc-robot">
+                      <div class="accordion-body">
+                        <p>
+                          A robotic car with a structured embedded codebase: motor driver control, sensor reads, and a wireless input layer.
+                          It’s designed to be easy to extend with additional sensors and behaviors.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#robot-collapse-2">
+                        <i class="bi bi-exclamation-diamond me-2"></i> The Challenge
+                      </button>
+                    </h2>
+                    <div id="robot-collapse-2" class="accordion-collapse collapse" data-bs-parent="#acc-robot">
+                      <div class="accordion-body">
+                        <p>
+                          Getting smooth, predictable motion while integrating sensors and wireless control.
+                          The biggest focus was on stable power, avoiding noisy readings, and making control behavior consistent.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#robot-collapse-3">
+                        <i class="bi bi-award me-2"></i> What I Learned
+                      </button>
+                    </h2>
+                    <div id="robot-collapse-3" class="accordion-collapse collapse" data-bs-parent="#acc-robot">
+                      <div class="accordion-body">
+                        <p>
+                          Integration is the real work: power budgeting, grounding, wiring discipline, sensor noise, and code structure
+                          matter as much as the “cool features.”
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-features" data-aos="fade-up" data-aos-delay="300">
+                <h3><i class="bi bi-stars"></i> Key Features</h3>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <ul class="feature-list">
+                      <li><i class="bi bi-check2-circle"></i> Motor driver control</li>
+                      <li><i class="bi bi-check2-circle"></i> Sensor integration</li>
+                      <li><i class="bi bi-check2-circle"></i> Modular code structure</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <ul class="feature-list">
+                      <li><i class="bi bi-check2-circle"></i> Wireless control layer</li>
+                      <li><i class="bi bi-check2-circle"></i> Repeatable testing approach</li>
+                      <li><i class="bi bi-check2-circle"></i> Clean hardware integration</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cta-buttons" data-aos="fade-up" data-aos-delay="400">
+                <a href="projects.html" class="btn-view-project">View All Projects</a>
+                <a href="#fifo" class="btn-next-project">Next Project <i class="bi bi-arrow-right"></i></a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =======================================================
+      PROJECT 3: FIFO
+    ======================================================== -->
+    <section id="fifo" class="portfolio-details section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Synchronous FIFO (RTL + Verification)</h2>
+        <p>
+          A clean, parameterized FIFO design with self-checking verification—focused on correctness, edge cases, and hardware-real behavior.
+        </p>
       </div>
 
-    </section><!-- /Portfolio Details Section -->
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="portfolio-details-media">
+              <div class="main-image">
+                <div class="portfolio-details-slider swiper init-swiper" data-aos="zoom-in">
+                  <script type="application/json" class="swiper-config">
+                    {
+                      "loop": true,
+                      "speed": 900,
+                      "autoplay": { "delay": 5500 },
+                      "slidesPerView": 1,
+                      "navigation": { "nextEl": ".swiper-button-next", "prevEl": ".swiper-button-prev" }
+                    }
+                  </script>
+
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="assets/img/portfolio/portfolio-fifo.webp" alt="Synchronous FIFO Cover" class="img-fluid">
+                    </div>
+                  </div>
+
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                </div>
+              </div>
+
+              <div class="tech-stack-badges" data-aos="fade-up" data-aos-delay="300">
+                <span>Verilog / SV</span>
+                <span>Parameterized</span>
+                <span>Self-checking TB</span>
+                <span>Corner Cases</span>
+                <span>Waveform Debug</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="portfolio-details-content">
+
+              <div class="project-meta">
+                <div class="badge-wrapper">
+                  <span class="project-badge">Digital Design</span>
+                </div>
+                <div class="date-client">
+                  <div class="meta-item">
+                    <i class="bi bi-tags"></i>
+                    <span>RTL • Verification</span>
+                  </div>
+                  <div class="meta-item">
+                    <i class="bi bi-diagram-3"></i>
+                    <span>State + Counters</span>
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="project-title">Correct-by-Construction FIFO Behavior</h2>
+
+              <div class="project-website">
+                <i class="bi bi-link-45deg"></i>
+                <a href="projects.html" target="_self">Back to Projects</a>
+              </div>
+
+              <div class="project-overview">
+                <p class="lead">
+                  I implemented a synchronous FIFO with correct full/empty behavior, clean pointer logic, and a self-checking testbench.
+                  The verification focuses on real corner cases like simultaneous read/write and boundary conditions.
+                </p>
+
+                <div class="accordion project-accordion" id="acc-fifo">
+                  <div class="accordion-item" data-aos="fade-up">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#fifo-collapse-1" aria-expanded="true">
+                        <i class="bi bi-clipboard-data me-2"></i> What I Built
+                      </button>
+                    </h2>
+                    <div id="fifo-collapse-1" class="accordion-collapse collapse show" data-bs-parent="#acc-fifo">
+                      <div class="accordion-body">
+                        <p>
+                          A parameterized FIFO module (depth/width) with read/write pointers, occupancy tracking, and robust flags.
+                          A self-checking testbench validates expected behavior across randomized traffic patterns.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fifo-collapse-2">
+                        <i class="bi bi-exclamation-diamond me-2"></i> The Challenge
+                      </button>
+                    </h2>
+                    <div id="fifo-collapse-2" class="accordion-collapse collapse" data-bs-parent="#acc-fifo">
+                      <div class="accordion-body">
+                        <p>
+                          Handling boundary conditions correctly: simultaneous read/write, full/empty transitions, and preventing illegal reads/writes.
+                          The goal was hardware-real behavior—not “sim-only” logic.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fifo-collapse-3">
+                        <i class="bi bi-award me-2"></i> What I Learned
+                      </button>
+                    </h2>
+                    <div id="fifo-collapse-3" class="accordion-collapse collapse" data-bs-parent="#acc-fifo">
+                      <div class="accordion-body">
+                        <p>
+                          Verification is where designs get real: a good testbench catches logic gaps fast and forces you to define “correctness” precisely.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-features" data-aos="fade-up" data-aos-delay="300">
+                <h3><i class="bi bi-stars"></i> Key Features</h3>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <ul class="feature-list">
+                      <li><i class="bi bi-check2-circle"></i> Parameterized width/depth</li>
+                      <li><i class="bi bi-check2-circle"></i> Full/empty flag correctness</li>
+                      <li><i class="bi bi-check2-circle"></i> Simultaneous R/W handling</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <ul class="feature-list">
+                      <li><i class="bi bi-check2-circle"></i> Self-checking testbench</li>
+                      <li><i class="bi bi-check2-circle"></i> Corner-case validation</li>
+                      <li><i class="bi bi-check2-circle"></i> Waveform-driven debug</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cta-buttons" data-aos="fade-up" data-aos-delay="400">
+                <a href="projects.html" class="btn-view-project">View All Projects</a>
+                <a href="#fpga-arithmetic" class="btn-next-project">Next Project <i class="bi bi-arrow-right"></i></a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =======================================================
+      PROJECT 4: FPGA ARITHMETIC
+    ======================================================== -->
+    <section id="fpga-arithmetic" class="portfolio-details section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>FPGA Arithmetic Display System</h2>
+        <p>
+          A digital system combining a datapath and control logic to perform arithmetic operations and display results on 7-segment output.
+        </p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="portfolio-details-media">
+              <div class="main-image">
+                <div class="portfolio-details-slider swiper init-swiper" data-aos="zoom-in">
+                  <script type="application/json" class="swiper-config">
+                    {
+                      "loop": true,
+                      "speed": 900,
+                      "autoplay": { "delay": 5500 },
+                      "slidesPerView": 1,
+                      "navigation": { "nextEl": ".swiper-button-next", "prevEl": ".swiper-button-prev" }
+                    }
+                  </script>
+
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="assets/img/portfolio/portfolio-arithmetic.webp" alt="FPGA Arithmetic Cover" class="img-fluid">
+                    </div>
+                  </div>
+
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                </div>
+              </div>
+
+              <div class="tech-stack-badges" data-aos="fade-up" data-aos-delay="300">
+                <span>Verilog</span>
+                <span>Vivado</span>
+                <span>Datapath</span>
+                <span>FSM Control</span>
+                <span>7-Segment</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="portfolio-details-content">
+
+              <div class="project-meta">
+                <div class="badge-wrapper">
+                  <span class="project-badge">FPGA / Digital</span>
+                </div>
+                <div class="date-client">
+                  <div class="meta-item">
+                    <i class="bi bi-tags"></i>
+                    <span>RTL • FSM</span>
+                  </div>
+                  <div class="meta-item">
+                    <i class="bi bi-display"></i>
+                    <span>Hardware Display</span>
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="project-title">Datapath + Control That Feels Like Real Hardware</h2>
+
+              <div class="project-website">
+                <i class="bi bi-link-45deg"></i>
+                <a href="projects.html" target="_self">Back to Projects</a>
+              </div>
+
+              <div class="project-overview">
+                <p class="lead">
+                  This project focuses on designing a clean digital architecture: a datapath that performs arithmetic operations and a controller (FSM)
+                  that sequences inputs/operations, with results displayed on a 7-segment interface.
+                </p>
+
+                <div class="accordion project-accordion" id="acc-fpgaarith">
+                  <div class="accordion-item" data-aos="fade-up">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#arith-collapse-1" aria-expanded="true">
+                        <i class="bi bi-clipboard-data me-2"></i> What I Built
+                      </button>
+                    </h2>
+                    <div id="arith-collapse-1" class="accordion-collapse collapse show" data-bs-parent="#acc-fpgaarith">
+                      <div class="accordion-body">
+                        <p>
+                          A structured arithmetic system using a datapath/control split, designed to behave predictably on hardware
+                          and display output cleanly using 7-segment logic.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#arith-collapse-2">
+                        <i class="bi bi-exclamation-diamond me-2"></i> The Challenge
+                      </button>
+                    </h2>
+                    <div id="arith-collapse-2" class="accordion-collapse collapse" data-bs-parent="#acc-fpgaarith">
+                      <div class="accordion-body">
+                        <p>
+                          Separating “doing the math” from “deciding when to do it” (datapath vs controller),
+                          and ensuring outputs are stable and display correctly under real timing constraints.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#arith-collapse-3">
+                        <i class="bi bi-award me-2"></i> What I Learned
+                      </button>
+                    </h2>
+                    <div id="arith-collapse-3" class="accordion-collapse collapse" data-bs-parent="#acc-fpgaarith">
+                      <div class="accordion-body">
+                        <p>
+                          How to design systems that scale: a clean module boundary makes debugging easier, reuse possible,
+                          and behavior easier to reason about.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-features" data-aos="fade-up" data-aos-delay="300">
+                <h3><i class="bi bi-stars"></i> Key Features</h3>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <ul class="feature-list">
+                      <li><i class="bi bi-check2-circle"></i> Datapath/control split</li>
+                      <li><i class="bi bi-check2-circle"></i> FSM sequencing</li>
+                      <li><i class="bi bi-check2-circle"></i> Display output logic</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <ul class="feature-list">
+                      <li><i class="bi bi-check2-circle"></i> Hardware-minded design</li>
+                      <li><i class="bi bi-check2-circle"></i> Clean modular RTL</li>
+                      <li><i class="bi bi-check2-circle"></i> Simulation + debugging</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cta-buttons" data-aos="fade-up" data-aos-delay="400">
+                <a href="projects.html" class="btn-view-project">View All Projects</a>
+                <a href="#mini-lysimeter" class="btn-next-project">Next Project <i class="bi bi-arrow-right"></i></a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =======================================================
+      PROJECT 5: MINI-LYSIMETER
+    ======================================================== -->
+    <section id="mini-lysimeter" class="portfolio-details section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Mini-Lysimeter Research GUI</h2>
+        <p>
+          A research-oriented Python GUI integrating DAQ hardware and microcontroller inputs to collect, monitor, and export experimental data.
+        </p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="portfolio-details-media">
+              <div class="main-image">
+                <div class="portfolio-details-slider swiper init-swiper" data-aos="zoom-in">
+                  <script type="application/json" class="swiper-config">
+                    {
+                      "loop": true,
+                      "speed": 900,
+                      "autoplay": { "delay": 5500 },
+                      "slidesPerView": 1,
+                      "navigation": { "nextEl": ".swiper-button-next", "prevEl": ".swiper-button-prev" }
+                    }
+                  </script>
+
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="assets/img/portfolio/portfolio-lysimeter.webp" alt="Mini-Lysimeter GUI Cover" class="img-fluid">
+                    </div>
+                  </div>
+
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                </div>
+              </div>
+
+              <div class="tech-stack-badges" data-aos="fade-up" data-aos-delay="300">
+                <span>Python</span>
+                <span>NI-DAQ</span>
+                <span>Arduino</span>
+                <span>GUI</span>
+                <span>Data Export</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="portfolio-details-content">
+
+              <div class="project-meta">
+                <div class="badge-wrapper">
+                  <span class="project-badge">Data Acquisition</span>
+                </div>
+                <div class="date-client">
+                  <div class="meta-item">
+                    <i class="bi bi-tags"></i>
+                    <span>Instrumentation</span>
+                  </div>
+                  <div class="meta-item">
+                    <i class="bi bi-graph-up"></i>
+                    <span>Monitoring + Export</span>
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="project-title">A Research-Friendly DAQ Interface</h2>
+
+              <div class="project-website">
+                <i class="bi bi-link-45deg"></i>
+                <a href="projects.html" target="_self">Back to Projects</a>
+              </div>
+
+              <div class="project-overview">
+                <p class="lead">
+                  I built a Python GUI to support research experiments by connecting to DAQ hardware and microcontroller inputs.
+                  The focus is usability: live monitoring, simple controls, and clean data export for analysis.
+                </p>
+
+                <div class="accordion project-accordion" id="acc-lysimeter">
+                  <div class="accordion-item" data-aos="fade-up">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#lys-collapse-1" aria-expanded="true">
+                        <i class="bi bi-clipboard-data me-2"></i> What I Built
+                      </button>
+                    </h2>
+                    <div id="lys-collapse-1" class="accordion-collapse collapse show" data-bs-parent="#acc-lysimeter">
+                      <div class="accordion-body">
+                        <p>
+                          A DAQ GUI that manages configuration, reading channels, monitoring signals live, and exporting results.
+                          It’s built to reduce friction for real experiments: fewer manual steps, clearer visibility, and cleaner outputs.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#lys-collapse-2">
+                        <i class="bi bi-exclamation-diamond me-2"></i> The Challenge
+                      </button>
+                    </h2>
+                    <div id="lys-collapse-2" class="accordion-collapse collapse" data-bs-parent="#acc-lysimeter">
+                      <div class="accordion-body">
+                        <p>
+                          Making a research tool that’s stable and simple: device connection handling, consistent sampling,
+                          and a UI that’s fast to use without being fragile.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#lys-collapse-3">
+                        <i class="bi bi-award me-2"></i> What I Learned
+                      </button>
+                    </h2>
+                    <div id="lys-collapse-3" class="accordion-collapse collapse" data-bs-parent="#acc-lysimeter">
+                      <div class="accordion-body">
+                        <p>
+                          Real tools need robustness: meaningful error handling, repeatable workflows, and exports that match analysis needs
+                          matter more than “flashy UI.”
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-features" data-aos="fade-up" data-aos-delay="300">
+                <h3><i class="bi bi-stars"></i> Key Features</h3>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <ul class="feature-list">
+                      <li><i class="bi bi-check2-circle"></i> Live monitoring</li>
+                      <li><i class="bi bi-check2-circle"></i> DAQ configuration</li>
+                      <li><i class="bi bi-check2-circle"></i> Clean exports</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <ul class="feature-list">
+                      <li><i class="bi bi-check2-circle"></i> Research-friendly UI</li>
+                      <li><i class="bi bi-check2-circle"></i> Stable acquisition flow</li>
+                      <li><i class="bi bi-check2-circle"></i> Easy iteration</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cta-buttons" data-aos="fade-up" data-aos-delay="400">
+                <a href="projects.html" class="btn-view-project">Back to Projects</a>
+                <a href="#emg" class="btn-next-project">Back to Top <i class="bi bi-arrow-up"></i></a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
 
   </main>
 
-  <footer id="footer" class="footer">
 
+  <footer id="footer" class="footer">
     <div class="container">
       <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">FolioOne</strong> <span>All Rights Reserved<br></span></p>
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Omar Alhalawani</strong> <span>All Rights Reserved<br></span></p>
       </div>
       <div class="social-links d-flex justify-content-center">
-        <a href=""><i class="bi bi-twitter-x"></i></a>
-        <a href=""><i class="bi bi-facebook"></i></a>
-        <a href=""><i class="bi bi-instagram"></i></a>
-        <a href=""><i class="bi bi-linkedin"></i></a>
+        <a href="https://github.com/Omar-Alhalawani" class="github" target="_blank" rel="noopener"><i class="bi bi-github"></i></a>
+        <a href="https://linkedin.com/in/omar-alhalawani" class="linkedin" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i></a>
+        <a href="mailto:omar.alhalawani2006@gmail.com" class="email"><i class="bi bi-envelope"></i></a>
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
