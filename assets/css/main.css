@@ -2884,108 +2884,58 @@ section,
   align-items: center;
 }
 
-/* =========================
-   Resume Page (clean + readable)
-========================= */
-
-.resume-page .resume-hero {
-  background: color-mix(in srgb, var(--surface-color), transparent 10%);
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-  border-radius: 18px;
-  padding: 28px;
-  box-shadow: 0 10px 30px color-mix(in srgb, var(--default-color), transparent 94%);
-  margin-bottom: 22px;
+/*--------------------------------------------------------------
+# Resume Page (Embedded PDF) - matches template style
+--------------------------------------------------------------*/
+.resume-embed {
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 92%);
+  border-radius: 1rem;
+  overflow: hidden;
+  height: min(80vh, 980px);
 }
 
-.resume-page .resume-title {
-  font-size: clamp(28px, 3.5vw, 44px);
-  margin: 0 0 8px 0;
-  font-weight: 700;
-}
-
-.resume-page .resume-subtitle {
-  margin: 0 0 18px 0;
-  color: color-mix(in srgb, var(--default-color), transparent 25%);
-  line-height: 1.7;
-  max-width: 70ch;
-}
-
-.resume-page .resume-actions {
+.resume-actions {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  margin-bottom: 14px;
+  margin-bottom: 18px;
 }
 
-.resume-page .btn.btn-outline {
+.resume-actions .btn {
+  border-radius: 50px;
+  padding: 12px 30px;
+  font-weight: 600;
+  border: 2px solid;
+}
+
+.resume-actions .btn-primary {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.resume-actions .btn-primary:hover {
+  background: color-mix(in srgb, var(--accent-color), black 15%);
+  border-color: color-mix(in srgb, var(--accent-color), black 15%);
+  transform: translateY(-2px);
+}
+
+.resume-actions .btn-outline {
   background: transparent;
+  border-color: var(--accent-color);
   color: var(--accent-color);
-  border: 2px solid var(--accent-color);
-  padding: 10px 18px;
-  border-radius: 999px;
-  font-weight: 600;
 }
 
-.resume-page .btn.btn-outline:hover {
-  transform: translateY(-1px);
+.resume-actions .btn-outline:hover {
+  transform: translateY(-2px);
 }
 
-.resume-page .btn.btn-ghost {
-  background: color-mix(in srgb, var(--accent-color), transparent 92%);
-  color: var(--accent-color);
-  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 70%);
-  padding: 10px 18px;
-  border-radius: 999px;
-  font-weight: 600;
-}
-
-.resume-page .resume-meta {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  align-items: center;
-  color: color-mix(in srgb, var(--default-color), transparent 35%);
-  font-size: 14px;
-}
-
-.resume-page .resume-meta a {
-  font-weight: 600;
-}
-
-.resume-page .resume-meta .dot {
-  opacity: 0.6;
-}
-
-.resume-page .resume-viewer {
-  background: color-mix(in srgb, var(--surface-color), transparent 8%);
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px color-mix(in srgb, var(--default-color), transparent 94%);
-}
-
-.resume-page .resume-viewer iframe {
+.resume-embed iframe {
   width: 100%;
-  height: min(80vh, 980px);
+  height: 100%;
   border: 0;
   display: block;
-}
-
-.resume-page .resume-fallback {
-  padding: 14px 18px;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 92%);
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-  font-size: 14px;
-}
-
-@media (max-width: 576px) {
-  .resume-page .resume-hero {
-    padding: 20px;
-  }
-
-  .resume-page .resume-viewer iframe {
-    height: 75vh;
-  }
 }
 
 
