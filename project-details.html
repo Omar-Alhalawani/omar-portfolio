@@ -325,148 +325,429 @@
       </div>
     </section>
 
-    <!-- =======================================================
-      PROJECT 3: FIFO
-    ======================================================== -->
-    <section id="fifo" class="portfolio-details section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Synchronous FIFO (RTL + Verification)</h2>
-        <p>A clean, parameterized FIFO design with self-checking verification—focused on correctness, edge cases, and hardware-real behavior.</p>
+<!-- =======================================================
+  PROJECT 3: FIFO
+======================================================== -->
+<section id="fifo" class="portfolio-details section">
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Synchronous FIFO (RTL + Verification)</h2>
+    <p>A clean, parameterized FIFO design with self-checking verification—focused on correctness, edge cases, and hardware-real behavior.</p>
+  </div>
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row gy-4">
+
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="portfolio-details-media">
+          <div class="main-image" data-aos="zoom-in">
+            <img src="assets/img/portfolio/portfolio-fifo.webp" alt="Synchronous FIFO Cover" class="img-fluid">
+          </div>
+          <div class="tech-stack-badges" data-aos="fade-up" data-aos-delay="200">
+            <span>Verilog / SV</span>
+            <span>Parameterized</span>
+            <span>Self-checking TB</span>
+            <span>Assertions</span>
+            <span>Waveform Debug</span>
+          </div>
+        </div>
       </div>
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4">
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="portfolio-details-content">
 
-          <div class="col-lg-6" data-aos="fade-right">
-            <div class="portfolio-details-media">
-              <div class="main-image" data-aos="zoom-in">
-                <img src="assets/img/portfolio/portfolio-fifo.webp" alt="Synchronous FIFO Cover" class="img-fluid">
+          <div class="project-meta">
+            <div class="badge-wrapper">
+              <span class="project-badge">FPGA / Digital</span>
+            </div>
+            <div class="date-client">
+              <div class="meta-item">
+                <i class="bi bi-tags"></i><span>RTL • Verification</span>
               </div>
-              <div class="tech-stack-badges" data-aos="fade-up" data-aos-delay="200">
-                <span>Verilog / SV</span>
-                <span>Parameterized</span>
-                <span>Self-checking TB</span>
-                <span>Corner Cases</span>
-                <span>Waveform Debug</span>
+              <div class="meta-item">
+                <i class="bi bi-diagram-3"></i><span>Pointers • Flags • Counters</span>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-6" data-aos="fade-left">
-            <div class="portfolio-details-content">
-              <div class="project-meta">
-                <div class="badge-wrapper"><span class="project-badge">Digital Design</span></div>
-                <div class="date-client">
-                  <div class="meta-item"><i class="bi bi-tags"></i><span>RTL • Verification</span></div>
-                  <div class="meta-item"><i class="bi bi-diagram-3"></i><span>State + Counters</span></div>
+          <h2 class="project-title">Correct FIFO Behavior Under Real Conditions</h2>
+
+          <div class="project-overview">
+            <p class="lead">
+              I implemented a synchronous FIFO with correct full/empty behavior, clean pointer logic, and a self-checking testbench.
+              The focus was correctness under edge cases: simultaneous read/write, boundary transitions, and illegal operation prevention.
+            </p>
+
+            <div class="accordion project-accordion" id="acc-fifo">
+              <div class="accordion-item" data-aos="fade-up">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#fifo-collapse-1" aria-expanded="true">
+                    <i class="bi bi-clipboard-data me-2"></i> What I Built
+                  </button>
+                </h2>
+                <div id="fifo-collapse-1" class="accordion-collapse collapse show" data-bs-parent="#acc-fifo">
+                  <div class="accordion-body">
+                    <p>
+                      A parameterized FIFO module (width + depth) using read/write pointers and occupancy tracking, with full/empty flags.
+                      I wrote a self-checking testbench that compares DUT outputs to a software reference model across randomized traffic.
+                    </p>
+                    <ul class="mb-0">
+                      <li>Configurable <strong>DATA_WIDTH</strong> and <strong>DEPTH</strong></li>
+                      <li>Safe handling of <strong>simultaneous read/write</strong></li>
+                      <li>Reference model + scoreboard for automated checking</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
 
-              <h2 class="project-title">Correct-by-Construction FIFO Behavior</h2>
-
-              <div class="project-overview">
-                <p class="lead">
-                  I implemented a synchronous FIFO with correct full/empty behavior, clean pointer logic, and a self-checking testbench,
-                  focusing on corner cases like simultaneous read/write and boundary transitions.
-                </p>
-
-                <!-- keep your accordion + features exactly as-is (omitted here for length if you want) -->
-                <!-- If you want, I can paste your exact accordion blocks back in unchanged. -->
+              <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fifo-collapse-2" aria-expanded="false">
+                    <i class="bi bi-exclamation-diamond me-2"></i> The Challenge
+                  </button>
+                </h2>
+                <div id="fifo-collapse-2" class="accordion-collapse collapse" data-bs-parent="#acc-fifo">
+                  <div class="accordion-body">
+                    <p>
+                      The hardest part is defining “correct” behavior when signals overlap:
+                      <strong>read + write in the same cycle</strong>, full-to-not-full transitions, and preventing reads on empty / writes on full.
+                      The design was written to match how real flip-flops update state on a clock edge.
+                    </p>
+                  </div>
+                </div>
               </div>
 
-              <div class="cta-buttons" data-aos="fade-up" data-aos-delay="400">
-                <a href="projects.html" class="btn-view-project">View All Projects</a>
-                <a href="#fpga-arithmetic" class="btn-next-project">Next Project <i class="bi bi-arrow-right"></i></a>
+              <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fifo-collapse-3" aria-expanded="false">
+                    <i class="bi bi-award me-2"></i> What I Learned
+                  </button>
+                </h2>
+                <div id="fifo-collapse-3" class="accordion-collapse collapse" data-bs-parent="#acc-fifo">
+                  <div class="accordion-body">
+                    <p>
+                      Good verification forces clarity. Writing a reference model + automated checks made bugs obvious fast,
+                      and it taught me to think in terms of cycle-accurate behavior and corner cases—not just “works in one demo”.
+                    </p>
+                  </div>
+                </div>
               </div>
-
             </div>
+          </div>
+
+          <div class="project-features" data-aos="fade-up" data-aos-delay="300">
+            <h3><i class="bi bi-stars"></i> Key Features</h3>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <ul class="feature-list">
+                  <li><i class="bi bi-check2-circle"></i> Parameterized width/depth</li>
+                  <li><i class="bi bi-check2-circle"></i> Correct full/empty flags</li>
+                  <li><i class="bi bi-check2-circle"></i> Safe simultaneous R/W</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul class="feature-list">
+                  <li><i class="bi bi-check2-circle"></i> Self-checking testbench</li>
+                  <li><i class="bi bi-check2-circle"></i> Scoreboard + reference model</li>
+                  <li><i class="bi bi-check2-circle"></i> Waveform-driven debugging</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="cta-buttons" data-aos="fade-up" data-aos-delay="400">
+            <a href="projects.html" class="btn-view-project">View All Projects</a>
+            <a href="#fpga-arithmetic" class="btn-next-project">Next Project <i class="bi bi-arrow-right"></i></a>
           </div>
 
         </div>
       </div>
-    </section>
 
-    <!-- =======================================================
-      PROJECT 4: FPGA ARITHMETIC
-    ======================================================== -->
-    <section id="fpga-arithmetic" class="portfolio-details section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>FPGA Arithmetic Display System</h2>
-        <p>A digital system combining a datapath and control logic to perform arithmetic operations and display results on 7-segment output.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- =======================================================
+  PROJECT 4: FPGA ARITHMETIC
+======================================================== -->
+<section id="fpga-arithmetic" class="portfolio-details section">
+  <div class="container section-title" data-aos="fade-up">
+    <h2>FPGA Arithmetic Display System</h2>
+    <p>A digital system combining a datapath and control logic to perform arithmetic operations and display results on a 7-segment interface.</p>
+  </div>
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row gy-4">
+
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="portfolio-details-media">
+          <div class="main-image" data-aos="zoom-in">
+            <img src="assets/img/portfolio/portfolio-arithmetic.webp" alt="FPGA Arithmetic Cover" class="img-fluid">
+          </div>
+          <div class="tech-stack-badges" data-aos="fade-up" data-aos-delay="200">
+            <span>Verilog</span>
+            <span>Vivado</span>
+            <span>Datapath</span>
+            <span>FSM Control</span>
+            <span>7-Segment</span>
+          </div>
+        </div>
       </div>
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4">
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="portfolio-details-content">
 
-          <div class="col-lg-6" data-aos="fade-right">
-            <div class="portfolio-details-media">
-              <div class="main-image" data-aos="zoom-in">
-                <img src="assets/img/portfolio/portfolio-arithmetic.webp" alt="FPGA Arithmetic Cover" class="img-fluid">
+          <div class="project-meta">
+            <div class="badge-wrapper">
+              <span class="project-badge">FPGA / Digital</span>
+            </div>
+            <div class="date-client">
+              <div class="meta-item">
+                <i class="bi bi-tags"></i><span>RTL • Datapath</span>
               </div>
-              <div class="tech-stack-badges" data-aos="fade-up" data-aos-delay="200">
-                <span>Verilog</span>
-                <span>Vivado</span>
-                <span>Datapath</span>
-                <span>FSM Control</span>
-                <span>7-Segment</span>
+              <div class="meta-item">
+                <i class="bi bi-display"></i><span>7-Segment Output</span>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-6" data-aos="fade-left">
-            <div class="portfolio-details-content">
-              <h2 class="project-title">Datapath + Control That Feels Like Real Hardware</h2>
-              <div class="cta-buttons" data-aos="fade-up" data-aos-delay="400">
-                <a href="projects.html" class="btn-view-project">View All Projects</a>
-                <a href="#mini-lysimeter" class="btn-next-project">Next Project <i class="bi bi-arrow-right"></i></a>
+          <h2 class="project-title">Datapath + Controller That Scales</h2>
+
+          <div class="project-overview">
+            <p class="lead">
+              This project focuses on clean digital architecture: a datapath that performs arithmetic and a controller (FSM)
+              that sequences inputs and operations, with stable output shown through 7-segment display logic.
+            </p>
+
+            <div class="accordion project-accordion" id="acc-arith">
+              <div class="accordion-item" data-aos="fade-up">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#arith-collapse-1" aria-expanded="true">
+                    <i class="bi bi-clipboard-data me-2"></i> What I Built
+                  </button>
+                </h2>
+                <div id="arith-collapse-1" class="accordion-collapse collapse show" data-bs-parent="#acc-arith">
+                  <div class="accordion-body">
+                    <p>
+                      A structured arithmetic system split into modules: registers, ALU logic, controller FSM, and display encoding.
+                      The design emphasizes stable outputs and clear module boundaries.
+                    </p>
+                    <ul class="mb-0">
+                      <li>Datapath modules for <strong>registering operands</strong> and performing operations</li>
+                      <li>Controller FSM for sequencing <strong>capture → compute → display</strong></li>
+                      <li>BCD / 7-segment encoding logic for readable output</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#arith-collapse-2" aria-expanded="false">
+                    <i class="bi bi-exclamation-diamond me-2"></i> The Challenge
+                  </button>
+                </h2>
+                <div id="arith-collapse-2" class="accordion-collapse collapse" data-bs-parent="#acc-arith">
+                  <div class="accordion-body">
+                    <p>
+                      Keeping the system “hardware-clean”: separating combinational vs sequential logic, ensuring stable outputs,
+                      and making sure the display updates at the right time without glitching or meta-behavior from noisy inputs.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#arith-collapse-3" aria-expanded="false">
+                    <i class="bi bi-award me-2"></i> What I Learned
+                  </button>
+                </h2>
+                <div id="arith-collapse-3" class="accordion-collapse collapse" data-bs-parent="#acc-arith">
+                  <div class="accordion-body">
+                    <p>
+                      Modular RTL makes everything easier: debugging, reuse, and scaling features.
+                      Once the datapath/control split is correct, future additions (new ops, input handling, display modes) are straightforward.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
+          </div>
+
+          <div class="project-features" data-aos="fade-up" data-aos-delay="300">
+            <h3><i class="bi bi-stars"></i> Key Features</h3>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <ul class="feature-list">
+                  <li><i class="bi bi-check2-circle"></i> Datapath/control split</li>
+                  <li><i class="bi bi-check2-circle"></i> FSM sequencing</li>
+                  <li><i class="bi bi-check2-circle"></i> Stable output timing</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul class="feature-list">
+                  <li><i class="bi bi-check2-circle"></i> 7-segment encoding</li>
+                  <li><i class="bi bi-check2-circle"></i> Clean modular RTL</li>
+                  <li><i class="bi bi-check2-circle"></i> Simulation + debug workflow</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="cta-buttons" data-aos="fade-up" data-aos-delay="400">
+            <a href="projects.html" class="btn-view-project">View All Projects</a>
+            <a href="#mini-lysimeter" class="btn-next-project">Next Project <i class="bi bi-arrow-right"></i></a>
           </div>
 
         </div>
       </div>
-    </section>
 
-    <!-- =======================================================
-      PROJECT 5: MINI-LYSIMETER
-    ======================================================== -->
-    <section id="mini-lysimeter" class="portfolio-details section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Mini-Lysimeter Research GUI</h2>
-        <p>A research-oriented Python GUI integrating DAQ hardware and microcontroller inputs to collect, monitor, and export experimental data.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- =======================================================
+  PROJECT 5: MINI-LYSIMETER
+======================================================== -->
+<section id="mini-lysimeter" class="portfolio-details section">
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Mini-Lysimeter Research GUI</h2>
+    <p>A research-oriented Python GUI integrating DAQ hardware and microcontroller inputs to collect, monitor, and export experimental data.</p>
+  </div>
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row gy-4">
+
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="portfolio-details-media">
+          <div class="main-image" data-aos="zoom-in">
+            <img src="assets/img/portfolio/portfolio-lysimeter.webp" alt="Mini-Lysimeter GUI Cover" class="img-fluid">
+          </div>
+          <div class="tech-stack-badges" data-aos="fade-up" data-aos-delay="200">
+            <span>Python</span>
+            <span>NI-DAQ</span>
+            <span>Arduino</span>
+            <span>GUI</span>
+            <span>CSV Export</span>
+          </div>
+        </div>
       </div>
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4">
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="portfolio-details-content">
 
-          <div class="col-lg-6" data-aos="fade-right">
-            <div class="portfolio-details-media">
-              <div class="main-image" data-aos="zoom-in">
-                <img src="assets/img/portfolio/portfolio-lysimeter.webp" alt="Mini-Lysimeter GUI Cover" class="img-fluid">
+          <div class="project-meta">
+            <div class="badge-wrapper">
+              <span class="project-badge">Python + DAQ</span>
+            </div>
+            <div class="date-client">
+              <div class="meta-item">
+                <i class="bi bi-tags"></i><span>Instrumentation</span>
               </div>
-              <div class="tech-stack-badges" data-aos="fade-up" data-aos-delay="200">
-                <span>Python</span>
-                <span>NI-DAQ</span>
-                <span>Arduino</span>
-                <span>GUI</span>
-                <span>Data Export</span>
+              <div class="meta-item">
+                <i class="bi bi-graph-up"></i><span>Live Monitoring</span>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-6" data-aos="fade-left">
-            <div class="portfolio-details-content">
-              <h2 class="project-title">A Research-Friendly DAQ Interface</h2>
-              <div class="cta-buttons" data-aos="fade-up" data-aos-delay="400">
-                <a href="projects.html" class="btn-view-project">Back to Projects</a>
-                <a href="#emg" class="btn-next-project">Back to Top <i class="bi bi-arrow-up"></i></a>
+          <h2 class="project-title">A Research-Friendly Data Capture Tool</h2>
+
+          <div class="project-overview">
+            <p class="lead">
+              I built a Python GUI to support experiments by connecting to DAQ hardware and microcontroller inputs.
+              The focus is usability and reliability: live monitoring, simple controls, and clean exports for analysis.
+            </p>
+
+            <div class="accordion project-accordion" id="acc-lys">
+              <div class="accordion-item" data-aos="fade-up">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#lys-collapse-1" aria-expanded="true">
+                    <i class="bi bi-clipboard-data me-2"></i> What I Built
+                  </button>
+                </h2>
+                <div id="lys-collapse-1" class="accordion-collapse collapse show" data-bs-parent="#acc-lys">
+                  <div class="accordion-body">
+                    <p>
+                      A GUI that configures channels, reads sensors in real-time, visualizes signals, and exports datasets.
+                      It reduces manual steps during experiments and helps catch issues early with live visibility.
+                    </p>
+                    <ul class="mb-0">
+                      <li>Device connection + configuration workflow</li>
+                      <li>Live read + plotting for experiment monitoring</li>
+                      <li>Clean CSV exports for downstream analysis</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#lys-collapse-2" aria-expanded="false">
+                    <i class="bi bi-exclamation-diamond me-2"></i> The Challenge
+                  </button>
+                </h2>
+                <div id="lys-collapse-2" class="accordion-collapse collapse" data-bs-parent="#acc-lys">
+                  <div class="accordion-body">
+                    <p>
+                      Making the tool stable under real lab usage: connection failures, sampling consistency, and a UI that stays responsive.
+                      This meant focusing on error handling, clear status, and predictable acquisition behavior.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#lys-collapse-3" aria-expanded="false">
+                    <i class="bi bi-award me-2"></i> What I Learned
+                  </button>
+                </h2>
+                <div id="lys-collapse-3" class="accordion-collapse collapse" data-bs-parent="#acc-lys">
+                  <div class="accordion-body">
+                    <p>
+                      The best tools are boring-in-a-good-way: clear workflows, meaningful error states, and exports that match what analysis needs.
+                      “Reliable and repeatable” beats “flashy” for research software.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
+          </div>
+
+          <div class="project-features" data-aos="fade-up" data-aos-delay="300">
+            <h3><i class="bi bi-stars"></i> Key Features</h3>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <ul class="feature-list">
+                  <li><i class="bi bi-check2-circle"></i> Live monitoring</li>
+                  <li><i class="bi bi-check2-circle"></i> Device configuration</li>
+                  <li><i class="bi bi-check2-circle"></i> Clean CSV exports</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul class="feature-list">
+                  <li><i class="bi bi-check2-circle"></i> Research-friendly UI</li>
+                  <li><i class="bi bi-check2-circle"></i> Stable acquisition flow</li>
+                  <li><i class="bi bi-check2-circle"></i> Practical error handling</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="cta-buttons" data-aos="fade-up" data-aos-delay="400">
+            <a href="projects.html" class="btn-view-project">Back to Projects</a>
+            <a href="#emg" class="btn-next-project">Back to Top <i class="bi bi-arrow-up"></i></a>
           </div>
 
         </div>
       </div>
-    </section>
+
+    </div>
+  </div>
+</section>
+
 
   </main>
 
