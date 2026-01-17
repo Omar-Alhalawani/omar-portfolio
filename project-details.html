@@ -385,13 +385,13 @@
                   </button>
                 </h2>
                 <div id="fifo-collapse-1" class="accordion-collapse collapse show" data-bs-parent="#acc-fifo">
-                  <div class="accordion-body">
+                  <div class="mb-3">
   <p>
     A parameterized FIFO module (width and depth) using read/write pointers and occupancy tracking, with explicit full and empty flags.
     The design cleanly separates pointer updates, flag logic, and data storage to match real hardware behavior.
   </p>
 
-  <p class="mb-3">
+  <p class="mb-0">
     The FIFO supports configurable <strong>DATA_WIDTH</strong> and <strong>DEPTH</strong>, safely handles <strong>simultaneous read and write</strong>
     operations in the same cycle, and is verified using a <strong>self-checking testbench</strong> with a software reference model
     and scoreboard to validate correctness under randomized traffic.
@@ -529,14 +529,14 @@
                   </button>
                 </h2>
                 <div id="arith-collapse-1" class="accordion-collapse collapse show" data-bs-parent="#acc-arith">
-                  <div class="accordion-body">
+                  <div class="mb-3">
   <p>
     I designed a structured FPGA-based arithmetic system composed of a datapath and a controller, following clean digital
     design principles. The datapath handles operand storage, arithmetic operations, and result formatting, while a
     finite-state machine (FSM) sequences input capture, computation, and display updates.
   </p>
 
-  <p class="mb-3">
+  <p class="mb-0">
     The system drives a 7-segment display using dedicated encoding logic, ensuring stable and readable outputs.
     Emphasis was placed on separating combinational and sequential logic, maintaining glitch-free display behavior,
     and keeping module boundaries clean to support debugging, reuse, and future feature expansion.
@@ -673,14 +673,14 @@
                   </button>
                 </h2>
                 <div id="lys-collapse-1" class="accordion-collapse collapse show" data-bs-parent="#acc-lys">
-                  <div class="accordion-body">
+                  <div class="mb-3">
   <p>
     I developed a Python-based graphical user interface to support laboratory experiments by integrating NI-DAQ hardware
     and microcontroller inputs. The tool allows users to configure acquisition channels, monitor sensor signals in
     real time, and maintain visibility into experiment health during data collection.
   </p>
 
-  <p class="mb-3">
+  <p class="mb-0">
     The interface emphasizes reliability and usability: predictable acquisition behavior, clear status feedback,
     and clean CSV data exports for downstream analysis. Design decisions focused on reducing manual steps,
     handling connection failures gracefully, and providing a workflow that researchers can trust during live experiments.
