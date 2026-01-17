@@ -71,6 +71,7 @@
           <a href="#fifo" class="btn btn-outline-primary btn-sm">FIFO</a>
           <a href="#fpga-arithmetic" class="btn btn-outline-primary btn-sm">FPGA Arithmetic</a>
           <a href="#mini-lysimeter" class="btn btn-outline-primary btn-sm">Mini-Lysimeter</a>
+          <a href="#simon-says" class="btn btn-outline-primary btn-sm">Simon Says</a>
         </div>
       </div>
     </section>
@@ -750,7 +751,168 @@
           </div>
 
           <div class="cta-buttons" data-aos="fade-up" data-aos-delay="400">
-            <a href="projects.html" class="btn-view-project">Back to Projects</a>
+            <a href="projects.html" class="btn-view-project">View All Projects</a>
+            <a href="#simon-says" class="btn-next-project">Next Project <i class="bi bi-arrow-right"></i></a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    
+<!-- =======================================================
+  PROJECT 6: SIMON SAYS
+======================================================== -->
+<section id="simon-says" class="portfolio-details section">
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Simon-Says Memory Game (Arduino)</h2>
+    <p>A handheld multi-mode Simon-style memory game with sound control, debounced inputs, and EEPROM high score saving—built fast, refined for usability, and packaged in a custom physical enclosure.</p>
+  </div>
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row gy-4">
+
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="portfolio-details-media">
+          <div class="main-image" data-aos="zoom-in">
+            <img src="assets/img/portfolio/portfolio-simon.webp" alt="Simon-Says Memory Game Cover" class="img-fluid">
+          </div>
+          <div class="tech-stack-badges" data-aos="fade-up" data-aos-delay="200">
+            <span>Arduino</span>
+            <span>C++</span>
+            <span>LCD (I2C)</span>
+            <span>EEPROM</span>
+            <span>Debouncing</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="portfolio-details-content">
+
+          <div class="project-meta">
+            <div class="badge-wrapper">
+              <span class="project-badge">Embedded + Hardware</span>
+            </div>
+            <div class="date-client">
+              <div class="meta-item">
+                <i class="bi bi-tags"></i><span>Game • Interaction</span>
+              </div>
+              <div class="meta-item">
+                <i class="bi bi-tools"></i><span>Enclosure + Prototyping</span>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="project-title">A Handheld Simon Game Built to Feel “Real”</h2>
+
+          <div class="project-overview">
+            <p class="lead">
+              I developed a Simon-Says memory game on Arduino in under two days, then iterated on both the software and
+              physical design to make it more playable, reliable, and portable. The final version supports multiple game modes,
+              sound control, and persistent high score tracking.
+            </p>
+
+            <div class="accordion project-accordion" id="acc-simon">
+
+              <div class="accordion-item" data-aos="fade-up">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#simon-collapse-1" aria-expanded="true">
+                    <i class="bi bi-clipboard-data me-2"></i> What I Built
+                  </button>
+                </h2>
+                <div id="simon-collapse-1" class="accordion-collapse collapse show" data-bs-parent="#acc-simon">
+                  <div class="accordion-body">
+                    <p class="mb-3">
+                      I built a complete Simon game system with a clear gameplay loop: generate sequences, present them using LEDs and tones,
+                      accept user input, validate correctness, and track progression using a level/score system. The firmware includes multiple
+                      play styles (Classic, Speed, Reverse, and Stealth), a lives system, and a mute toggle for sound control.
+                    </p>
+
+                    <p class="mb-0">
+                      To make the device feel polished rather than prototype-only, I added debounced button handling, an I2C LCD interface for
+                      readable prompts and feedback, and EEPROM-based high score saving so the best score persists across power cycles. I also
+                      designed the physical enclosure in Autodesk Inventor and used hands-on fabrication/woodworking to build the game box and
+                      later refine it into a handheld “Gameboy-style” form factor.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#simon-collapse-2" aria-expanded="false">
+                    <i class="bi bi-exclamation-diamond me-2"></i> The Challenge
+                  </button>
+                </h2>
+                <div id="simon-collapse-2" class="accordion-collapse collapse" data-bs-parent="#acc-simon">
+                  <div class="accordion-body">
+                    <p class="mb-3">
+                      The biggest challenge was making the game reliable and responsive under real use. Without debouncing, button presses
+                      can double-trigger, and timing-sensitive modes can become frustrating rather than fun. I also had to keep the UI readable
+                      and avoid confusing state transitions while still supporting multiple modes and gameplay rules.
+                    </p>
+
+                    <p class="mb-0">
+                      On the hardware side, I iterated on the enclosure to balance usability and portability. The first design focused on a full
+                      game-box experience, then I simplified the physical layout into a handheld version while keeping the interaction clear:
+                      consistent button placement, obvious LED feedback, and sound cues that match the game state.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#simon-collapse-3" aria-expanded="false">
+                    <i class="bi bi-award me-2"></i> What I Learned
+                  </button>
+                </h2>
+                <div id="simon-collapse-3" class="accordion-collapse collapse" data-bs-parent="#acc-simon">
+                  <div class="accordion-body">
+                    <p class="mb-3">
+                      This project taught me how fast prototyping and clean system thinking can work together. Building the first playable version
+                      quickly was useful, but the real improvement came from iteration: tightening state logic, adding robust input handling,
+                      and making the UI clearer so the device is enjoyable and predictable.
+                    </p>
+
+                    <p class="mb-0">
+                      I also learned how much physical design affects software perception. Even simple electronics feel “finished” when the enclosure,
+                      input layout, and feedback are intentional. The result is a small embedded product that demonstrates both firmware structure
+                      and real-world hardware integration.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="project-features" data-aos="fade-up" data-aos-delay="300">
+            <h3><i class="bi bi-stars"></i> Key Features</h3>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <ul class="feature-list">
+                  <li><i class="bi bi-check2-circle"></i> Classic, Speed, Reverse, Stealth modes</li>
+                  <li><i class="bi bi-check2-circle"></i> Lives + scoring progression</li>
+                  <li><i class="bi bi-check2-circle"></i> Debounced input handling</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul class="feature-list">
+                  <li><i class="bi bi-check2-circle"></i> EEPROM high score persistence</li>
+                  <li><i class="bi bi-check2-circle"></i> LCD prompts + feedback</li>
+                  <li><i class="bi bi-check2-circle"></i> Custom Inventor enclosure design</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="cta-buttons" data-aos="fade-up" data-aos-delay="400">
+            <a href="projects.html" class="btn-view-project">View All Projects</a>
             <a href="#emg" class="btn-next-project">Back to Top <i class="bi bi-arrow-up"></i></a>
           </div>
 
