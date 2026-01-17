@@ -127,50 +127,70 @@
                   and processing it in Python for visualization and feature extraction.
                 </p>
 
-                <div class="accordion project-accordion" id="acc-emg">
-                  <div class="accordion-item" data-aos="fade-up">
-                    <h2 class="accordion-header">
-                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#emg-collapse-1" aria-expanded="true">
-                        <i class="bi bi-clipboard-data me-2"></i> What I Built
-                      </button>
-                    </h2>
-                    <div id="emg-collapse-1" class="accordion-collapse collapse show" data-bs-parent="#acc-emg">
-                      <div class="accordion-body">
-                        <p>
-                          A complete EMG workflow: sensor capture → microcontroller streaming → Python processing, with live plotting, noise reduction,
-                          and basic metrics for consistent tracking across trials.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                <<div class="accordion project-accordion" id="acc-emg">
 
-                  <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
-                    <h2 class="accordion-header">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#emg-collapse-2">
-                        <i class="bi bi-exclamation-diamond me-2"></i> The Challenge
-                      </button>
-                    </h2>
-                    <div id="emg-collapse-2" class="accordion-collapse collapse" data-bs-parent="#acc-emg">
-                      <div class="accordion-body">
-                        <p>EMG is noisy and inconsistent. The main challenges were stabilizing capture, reducing motion/line noise, and producing outputs that reflect real activation rather than artifacts.</p>
-                      </div>
-                    </div>
-                  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#emg-collapse-1">
+        What I Built
+      </button>
+    </h2>
+    <div id="emg-collapse-1" class="accordion-collapse collapse show">
+      <div class="accordion-body">
+        <p class="mb-3">
+          I built a complete EMG acquisition and processing pipeline that captures raw muscle signals from surface electrodes,
+          streams them through a microcontroller, and processes them in Python for visualization and analysis.
+        </p>
+        <p class="mb-0">
+          The system was designed for repeatability rather than one-off demos, with consistent sampling,
+          stable serial communication, and processing steps that produce comparable outputs across trials.
+        </p>
+      </div>
+    </div>
+  </div>
 
-                  <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
-                    <h2 class="accordion-header">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#emg-collapse-3">
-                        <i class="bi bi-award me-2"></i> What I Learned
-                      </button>
-                    </h2>
-                    <div id="emg-collapse-3" class="accordion-collapse collapse" data-bs-parent="#acc-emg">
-                      <div class="accordion-body">
-                        <p>How to design “lab reliable” tooling: consistent sampling, clean data paths, repeatable processing, and visuals that support decisions.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#emg-collapse-2">
+        The Challenge
+      </button>
+    </h2>
+    <div id="emg-collapse-2" class="accordion-collapse collapse">
+      <div class="accordion-body">
+        <p class="mb-3">
+          EMG signals are inherently noisy and highly sensitive to electrode placement, motion artifacts,
+          and power-line interference.
+        </p>
+        <p class="mb-0">
+          The challenge was producing clean, interpretable data while keeping the system responsive enough
+          for live monitoring and experimentation.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#emg-collapse-3">
+        What I Learned
+      </button>
+    </h2>
+    <div id="emg-collapse-3" class="accordion-collapse collapse">
+      <div class="accordion-body">
+        <p class="mb-3">
+          This project emphasized the importance of building lab-reliable tools rather than scripts that only work once.
+          Stable timing, clean data paths, and meaningful visualization matter more than complex algorithms.
+        </p>
+        <p class="mb-0">
+          I also developed a stronger intuition for signal pipelines, where early design decisions
+          directly affect downstream usability.
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
 
               <div class="project-features" data-aos="fade-up" data-aos-delay="300">
                 <h3><i class="bi bi-stars"></i> Key Features</h3>
