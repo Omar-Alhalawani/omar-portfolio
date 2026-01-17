@@ -2945,6 +2945,14 @@ section,
   pointer-events: none;
 }
 
+/* Project details accordion: make bullet text readable on dark background */
+.portfolio-details .accordion-body ul,
+.portfolio-details .accordion-body ul li {
+  color: inherit !important;
+  opacity: 1 !important;
+}
+
+
 /* If any old overlay markup still exists somewhere, hide it completely */
 .portfolio .portfolio-overlay,
 .portfolio .portfolio-lightbox,
