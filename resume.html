@@ -37,7 +37,6 @@
   ======================================================== -->
 </head>
 
-
 <body class="portfolio-page">
 
   <header id="header" class="header d-flex align-items-center light-background sticky-top">
@@ -61,33 +60,16 @@
           <li></li>
           <li></li>
           <li></li>
-           <li></li>
+          <li></li>
           <li><a href="index.html">Home</a></li>
           <li></li>
           <li><a href="about.html">About</a></li>
           <li></li>
-          <li><a href="resume.html"class="active">Resume</a></li>
+          <li><a href="resume.html" class="active">Resume</a></li>
           <li></li>
           <li><a href="projects.html">Projects</a>
           <li></li>
           </li><li><a href="services.html">Services</a></li>
-          <!---<li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li>--->
           <li></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -103,143 +85,60 @@
     </div>
   </header>
 
-<main class="main">
+  <main class="main">
 
-  <!-- Resume Section -->
-  <section id="resume" class="resume section">
+    <!-- Resume Section (EMBEDDED PDF) -->
+    <section id="resume" class="resume section">
 
-    <!-- Section Title -->
-    <div class="container section-title" data-aos="fade-up">
-      <h2>Resume</h2>
-      <p>A snapshot of my education, hands-on engineering experience, and the technical skills I use to build real systems.</p>
-    </div>
-    <!-- End Section Title -->
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Resume</h2>
+        <p>View my resume below or download the PDF.</p>
+      </div>
+      <!-- End Section Title -->
 
-    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-      <div class="row">
-        <div class="col-lg-6">
+        <!-- Buttons (match theme buttons) -->
+        <div class="d-flex flex-wrap gap-2 mb-4 justify-content-center justify-content-lg-start">
+          <!-- CHANGE THIS PATH if your PDF file is named differently -->
+          <a class="btn btn-primary" href="assets/resume/Resume_1___Omar_Alhalawani.pdf" target="_blank" rel="noopener">
+            <i class="bi bi-box-arrow-up-right me-2"></i>Open PDF
+          </a>
 
-          <!-- Education Section -->
-          <div class="resume-item" data-aos="fade-up">
-            <h3 class="resume-title">Education</h3>
-
-            <div class="resume-content">
-
-              <article class="education-item">
-                <h4>Bachelor of Engineering in Computer Systems Engineering</h4>
-                <h5>2024 – 2029 (Expected)</h5>
-                <p class="institution"><em>Carleton University — Ottawa, Canada</em></p>
-                <p>CGPA: 11.60/12. Dean’s Honour List. Ontario Professional Engineers Scholarship recipient.</p>
-              </article>
-
-              <article class="education-item">
-                <h4>Technical Focus Areas</h4>
-                <h5>Ongoing</h5>
-                <p class="institution"><em>Independent / Competitions / Lab Work</em></p>
-                <p>Embedded systems, FPGA/Verilog, robotics, Python DAQ tools, electronics repair, and real-world engineering workflows.</p>
-              </article>
-
-            </div>
-          </div>
-          <!-- End Education Section -->
-
-          <!-- Professional Skills Section -->
-          <div class="resume-item skills-animation" data-aos="fade-up">
-            <h3 class="resume-title">Professional Skills</h3>
-
-            <div class="resume-content">
-
-              <div class="skill-item">
-                <h4>Embedded Systems</h4>
-                <div class="progress">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-
-              <div class="skill-item">
-                <h4>FPGA & Verilog</h4>
-                <div class="progress">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-
-              <div class="skill-item">
-                <h4>Python Tooling & Automation</h4>
-                <div class="progress">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-
-              <div class="skill-item">
-                <h4>Robotics & IoT Systems</h4>
-                <div class="progress">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-          <!-- End Professional Skills Section -->
-
+          <!-- CHANGE THIS PATH if your PDF file is named differently -->
+          <a class="btn btn-outline" href="assets/resume/Resume_1___Omar_Alhalawani.pdf" download>
+            <i class="bi bi-download me-2"></i>Download
+          </a>
         </div>
 
-        <div class="col-lg-6">
-
-          <!-- Experience Section -->
-          <div class="resume-item" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Professional Experience</h3>
-
-            <div class="resume-content">
-
-              <article class="experience-item">
-                <h4>Engineering Office & Laboratory Assistant</h4>
-                <h5>2025 – Present</h5>
-                <p class="company"><em>Carleton University — Civil & Environmental Engineering</em></p>
-                <ul>
-                  <li>Developing the Mini-Lysimeter Research GUI (Python + NI-DAQ + Arduino @ 100 Hz) for soil mechanics experiments.</li>
-                  <li>Built multithreaded data acquisition + visualization tools with autosaving and multi-sensor synchronization.</li>
-                  <li>Maintained lab computers, servers, and internal tools; deployed Linux systems and improved hardware workflows.</li>
-                </ul>
-              </article>
-
-              <article class="experience-item">
-                <h4>Teaching Assistant — ECOR 1031</h4>
-                <h5>2025 – Present</h5>
-                <p class="company"><em>Carleton University — Engineering & Design</em></p>
-                <ul>
-                  <li>Taught Python labs on Linux/Ubuntu to 150+ first-year students, emphasizing debugging and modular design.</li>
-                  <li>Provided structured guidance that improved lab completion rates and student confidence.</li>
-                </ul>
-              </article>
-
-              <article class="experience-item">
-                <h4>Founder & Repair Technician</h4>
-                <h5>2022 – Present</h5>
-                <p class="company"><em>Alhalawani Tech Solutions</em></p>
-                <ul>
-                  <li>Repaired 200+ devices using diagnostics, micro-soldering, component replacement, and optimization workflows.</li>
-                  <li>Reduced turnaround time through automated tracking systems and standardized diagnostic procedures.</li>
-                  <li>Maintained strong client retention through documentation and consistent repair quality.</li>
-                </ul>
-              </article>
-
-            </div>
-          </div>
-          <!-- End Experience Section -->
-
+        <!-- Embedded viewer (boxed like other sections) -->
+        <div style="
+          background: var(--surface-color);
+          border: 1px solid color-mix(in srgb, var(--default-color), transparent 92%);
+          border-radius: 1rem;
+          overflow: hidden;
+          height: min(80vh, 980px);
+        ">
+          <iframe
+            src="assets/resume/Omar_Alhalawani_Resume.pdf#view=FitH"
+            title="Omar Alhalawani Resume"
+            style="width:100%; height:100%; border:0; display:block;"
+            loading="lazy">
+          </iframe>
         </div>
+
+        <!-- Fallback note -->
+        <p class="mt-3 mb-0" style="color: color-mix(in srgb, var(--default-color), transparent 35%); font-size: 14px;">
+          If the embedded viewer doesn’t load on your browser, use the buttons above to open or download the PDF.
+        </p>
+
       </div>
 
-    </div>
-
-  </section>
-  <!-- /Resume Section -->
-
-</main>
+    </section>
+    <!-- /Resume Section -->
 
   </main>
-
 
   <footer id="footer" class="footer">
 
@@ -253,10 +152,6 @@
         <a href="mailto:omar.alhalawani2006@gmail.com" class="email"><i class="bi bi-envelope"></i></a>
       </div>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>
