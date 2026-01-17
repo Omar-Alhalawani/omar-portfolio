@@ -1,97 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Resume | Omar Alhalawani</title>
-
-  <!-- Your existing template CSS files (keep whatever your project already uses) -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="assets/css/main.css" rel="stylesheet" />
-</head>
-
-<body>
-
-  <!-- ======= Header (keep your existing site header/nav if you already have it) ======= -->
-  <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
-        <h1 class="sitename">Omar</h1>
-      </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index.html#hero">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a class="active" href="resume.html">Resume</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-    </div>
-  </header>
-
-  <main class="main">
-
-    <!-- ======= Resume Hero ======= -->
-    <section class="resume-page section">
-      <div class="container">
-
-        <div class="resume-hero">
-          <div class="resume-hero-text">
-            <h1 class="resume-title">Resume</h1>
-            <p class="resume-subtitle">
-              Download the PDF or view it directly below.
-            </p>
-
-            <div class="resume-actions">
-              <a class="btn btn-primary" href="assets/resume/Resume_1___Omar_Alhalawani.pdf" target="_blank" rel="noopener">
-                Open PDF
-              </a>
-              <a class="btn btn-outline" href="assets/resume/Resume_1___Omar_Alhalawani.pdf" download>
-                Download
-              </a>
-              <a class="btn btn-ghost" href="index.html#contact">
-                Contact Me
-              </a>
-            </div>
-
-            <div class="resume-meta">
-              <span>Ottawa, ON • Computer Systems Engineering</span>
-              <span class="dot">•</span>
-              <a href="https://omar-alhalawani.github.io/omar-portfolio/" target="_blank" rel="noopener">
-                Portfolio Website
-              </a>
-            </div>
-          </div>
+<!-- ======= Page Title ======= -->
+<div class="page-title">
+  <div class="heading">
+    <div class="container">
+      <div class="row d-flex justify-content-center text-center">
+        <div class="col-lg-8">
+          <h1>Resume</h1>
+          <p class="mb-0">
+            View my resume below or download the PDF.
+          </p>
         </div>
-
-        <!-- ======= Embedded PDF Viewer ======= -->
-        <div class="resume-viewer">
-          <iframe
-            src="assets/resume/Omar_Alhalawani_Resume.pdf#view=FitH"
-            title="Omar Alhalawani Resume PDF"
-            loading="lazy">
-          </iframe>
-
-          <div class="resume-fallback">
-            <p>
-              If the embedded viewer doesn’t load in your browser:
-              <a href="assets/resume/Omar_Alhalawani_Resume.pdf" target="_blank" rel="noopener">open the PDF</a>.
-            </p>
-          </div>
-        </div>
-
       </div>
-    </section>
+    </div>
+  </div>
 
-  </main>
+  <nav class="breadcrumbs">
+    <div class="container">
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li class="current">Resume</li>
+      </ol>
+    </div>
+  </nav>
+</div>
+<!-- End Page Title -->
 
-  <!-- Your existing JS files (keep whatever your project already uses) -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/main.js"></script>
-</body>
+<!-- ======= Resume Section ======= -->
+<section id="resume" class="section resume">
+  <div class="container" data-aos="fade-up">
 
-</html>
+    <div class="resume-actions">
+      <a class="btn btn-primary" href="assets/resume/Omar_Alhalawani_Resume.pdf" target="_blank" rel="noopener">
+        Open PDF
+      </a>
+      <a class="btn btn-outline" href="assets/resume/Omar_Alhalawani_Resume.pdf" download>
+        Download
+      </a>
+    </div>
+
+    <div class="resume-embed">
+      <iframe
+        src="assets/resume/Omar_Alhalawani_Resume.pdf#view=FitH"
+        title="Omar Alhalawani Resume"
+        loading="lazy">
+      </iframe>
+    </div>
+
+  </div>
+</section>
+<!-- End Resume Section -->
