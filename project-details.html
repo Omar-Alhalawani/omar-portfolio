@@ -386,16 +386,18 @@
                 </h2>
                 <div id="fifo-collapse-1" class="accordion-collapse collapse show" data-bs-parent="#acc-fifo">
                   <div class="accordion-body">
-                    <p>
-                      A parameterized FIFO module (width + depth) using read/write pointers and occupancy tracking, with full/empty flags.
-                      I wrote a self-checking testbench that compares DUT outputs to a software reference model across randomized traffic.
-                    </p>
-                    <ul class="mb-0">
-                      <li>Configurable <strong>DATA_WIDTH</strong> and <strong>DEPTH</strong></li>
-                      <li>Safe handling of <strong>simultaneous read/write</strong></li>
-                      <li>Reference model + scoreboard for automated checking</li>
-                    </ul>
-                  </div>
+  <p>
+    A parameterized FIFO module (width and depth) using read/write pointers and occupancy tracking, with explicit full and empty flags.
+    The design cleanly separates pointer updates, flag logic, and data storage to match real hardware behavior.
+  </p>
+
+  <p class="mb-0">
+    The FIFO supports configurable <strong>DATA_WIDTH</strong> and <strong>DEPTH</strong>, safely handles <strong>simultaneous read and write</strong>
+    operations in the same cycle, and is verified using a <strong>self-checking testbench</strong> with a software reference model
+    and scoreboard to validate correctness under randomized traffic.
+  </p>
+</div>
+
                 </div>
               </div>
 
@@ -528,16 +530,19 @@
                 </h2>
                 <div id="arith-collapse-1" class="accordion-collapse collapse show" data-bs-parent="#acc-arith">
                   <div class="accordion-body">
-                    <p>
-                      A structured arithmetic system split into modules: registers, ALU logic, controller FSM, and display encoding.
-                      The design emphasizes stable outputs and clear module boundaries.
-                    </p>
-                    <ul class="mb-0">
-                      <li>Datapath modules for <strong>registering operands</strong> and performing operations</li>
-                      <li>Controller FSM for sequencing <strong>capture → compute → display</strong></li>
-                      <li>BCD / 7-segment encoding logic for readable output</li>
-                    </ul>
-                  </div>
+  <p>
+    I designed a structured FPGA-based arithmetic system composed of a datapath and a controller, following clean digital
+    design principles. The datapath handles operand storage, arithmetic operations, and result formatting, while a
+    finite-state machine (FSM) sequences input capture, computation, and display updates.
+  </p>
+
+  <p class="mb-0">
+    The system drives a 7-segment display using dedicated encoding logic, ensuring stable and readable outputs.
+    Emphasis was placed on separating combinational and sequential logic, maintaining glitch-free display behavior,
+    and keeping module boundaries clean to support debugging, reuse, and future feature expansion.
+  </p>
+</div>
+
                 </div>
               </div>
 
@@ -669,16 +674,19 @@
                 </h2>
                 <div id="lys-collapse-1" class="accordion-collapse collapse show" data-bs-parent="#acc-lys">
                   <div class="accordion-body">
-                    <p>
-                      A GUI that configures channels, reads sensors in real-time, visualizes signals, and exports datasets.
-                      It reduces manual steps during experiments and helps catch issues early with live visibility.
-                    </p>
-                    <ul class="mb-0">
-                      <li>Device connection + configuration workflow</li>
-                      <li>Live read + plotting for experiment monitoring</li>
-                      <li>Clean CSV exports for downstream analysis</li>
-                    </ul>
-                  </div>
+  <p>
+    I developed a Python-based graphical user interface to support laboratory experiments by integrating NI-DAQ hardware
+    and microcontroller inputs. The tool allows users to configure acquisition channels, monitor sensor signals in
+    real time, and maintain visibility into experiment health during data collection.
+  </p>
+
+  <p class="mb-0">
+    The interface emphasizes reliability and usability: predictable acquisition behavior, clear status feedback,
+    and clean CSV data exports for downstream analysis. Design decisions focused on reducing manual steps,
+    handling connection failures gracefully, and providing a workflow that researchers can trust during live experiments.
+  </p>
+</div>
+
                 </div>
               </div>
 
