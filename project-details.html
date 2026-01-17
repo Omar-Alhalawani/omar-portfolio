@@ -79,150 +79,135 @@
       PROJECT 1: EMG
     ======================================================== -->
     <section id="emg" class="portfolio-details section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>EMG Signal Acquisition &amp; Processing</h2>
-        <p>A complete EMG pipeline—sensor capture, microcontroller streaming, and Python processing/visualization for clean, usable muscle-signal data.</p>
+  <div class="container section-title" data-aos="fade-up">
+    <h2>EMG Signal Acquisition &amp; Processing</h2>
+    <p>A complete EMG pipeline—sensor capture, microcontroller streaming, and Python processing/visualization for clean, usable muscle-signal data.</p>
+  </div>
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row gy-4">
+
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="portfolio-details-media">
+          <div class="main-image" data-aos="zoom-in">
+            <img src="assets/img/portfolio/portfolio-emg.webp" alt="EMG Project Cover" class="img-fluid">
+          </div>
+
+          <div class="tech-stack-badges" data-aos="fade-up" data-aos-delay="200">
+            <span>MyoWare</span>
+            <span>Arduino</span>
+            <span>Python</span>
+            <span>Signal Filtering</span>
+            <span>Visualization</span>
+          </div>
+        </div>
       </div>
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4">
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="portfolio-details-content">
 
-          <div class="col-lg-6" data-aos="fade-right">
-            <div class="portfolio-details-media">
-              <div class="main-image" data-aos="zoom-in">
-                <img src="assets/img/portfolio/portfolio-emg.webp" alt="EMG Project Cover" class="img-fluid">
+          <div class="project-meta">
+            <div class="badge-wrapper">
+              <span class="project-badge">Embedded + Python</span>
+            </div>
+
+            <div class="date-client">
+              <div class="meta-item">
+                <i class="bi bi-tags"></i><span>Biomedical • DAQ</span>
               </div>
-              <div class="tech-stack-badges" data-aos="fade-up" data-aos-delay="200">
-                <span>MyoWare</span>
-                <span>Arduino</span>
-                <span>Python</span>
-                <span>Signal Filtering</span>
-                <span>Visualization</span>
+              <div class="meta-item">
+                <i class="bi bi-cpu"></i><span>Real-time Data Stream</span>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-6" data-aos="fade-left">
-            <div class="portfolio-details-content">
+          <h2 class="project-title">From Raw EMG to Clean Features</h2>
 
-              <div class="project-meta">
-                <div class="badge-wrapper">
-                  <span class="project-badge">Embedded + Python</span>
-                </div>
-                <div class="date-client">
-                  <div class="meta-item">
-                    <i class="bi bi-tags"></i><span>Biomedical • DAQ</span>
-                  </div>
-                  <div class="meta-item">
-                    <i class="bi bi-cpu"></i><span>Real-time Data Stream</span>
-                  </div>
-                </div>
-              </div>
+          <div class="project-overview">
+            <p class="lead">
+              I built a reliable acquisition + analysis workflow for EMG signals: capturing raw sensor output, streaming it through a microcontroller, and processing it in Python for visualization and feature extraction.
+            </p>
 
-              <h2 class="project-title">From Raw EMG to Clean Features</h2>
+            <div class="accordion project-accordion" id="acc-emg">
 
-              <div class="project-overview">
-                <p class="lead">
-                  I built a reliable acquisition + analysis workflow for EMG signals: capturing raw sensor output, streaming it through a microcontroller,
-                  and processing it in Python for visualization and feature extraction.
-                </p>
-
-                <<div class="accordion project-accordion" id="acc-emg">
-
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#emg-collapse-1">
-        What I Built
-      </button>
-    </h2>
-    <div id="emg-collapse-1" class="accordion-collapse collapse show">
-      <div class="accordion-body">
-        <p class="mb-3">
-          I built a complete EMG acquisition and processing pipeline that captures raw muscle signals from surface electrodes,
-          streams them through a microcontroller, and processes them in Python for visualization and analysis.
-        </p>
-        <p class="mb-0">
-          The system was designed for repeatability rather than one-off demos, with consistent sampling,
-          stable serial communication, and processing steps that produce comparable outputs across trials.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#emg-collapse-2">
-        The Challenge
-      </button>
-    </h2>
-    <div id="emg-collapse-2" class="accordion-collapse collapse">
-      <div class="accordion-body">
-        <p class="mb-3">
-          EMG signals are inherently noisy and highly sensitive to electrode placement, motion artifacts,
-          and power-line interference.
-        </p>
-        <p class="mb-0">
-          The challenge was producing clean, interpretable data while keeping the system responsive enough
-          for live monitoring and experimentation.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#emg-collapse-3">
-        What I Learned
-      </button>
-    </h2>
-    <div id="emg-collapse-3" class="accordion-collapse collapse">
-      <div class="accordion-body">
-        <p class="mb-3">
-          This project emphasized the importance of building lab-reliable tools rather than scripts that only work once.
-          Stable timing, clean data paths, and meaningful visualization matter more than complex algorithms.
-        </p>
-        <p class="mb-0">
-          I also developed a stronger intuition for signal pipelines, where early design decisions
-          directly affect downstream usability.
-        </p>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-
-              <div class="project-features" data-aos="fade-up" data-aos-delay="300">
-                <h3><i class="bi bi-stars"></i> Key Features</h3>
-                <div class="row g-3">
-                  <div class="col-md-6">
-                    <ul class="feature-list">
-                      <li><i class="bi bi-check2-circle"></i> Reliable EMG data streaming</li>
-                      <li><i class="bi bi-check2-circle"></i> Live plotting + monitoring</li>
-                      <li><i class="bi bi-check2-circle"></i> Filtering / noise reduction</li>
-                    </ul>
-                  </div>
-                  <div class="col-md-6">
-                    <ul class="feature-list">
-                      <li><i class="bi bi-check2-circle"></i> Feature extraction basics</li>
-                      <li><i class="bi bi-check2-circle"></i> Repeatable workflow</li>
-                      <li><i class="bi bi-check2-circle"></i> Portfolio-ready tooling</li>
-                    </ul>
+              <div class="accordion-item" data-aos="fade-up">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#emg-collapse-1" aria-expanded="true">
+                    <i class="bi bi-clipboard-data me-2"></i> What I Built
+                  </button>
+                </h2>
+                <div id="emg-collapse-1" class="accordion-collapse collapse show" data-bs-parent="#acc-emg">
+                  <div class="accordion-body">
+                    <p>
+                      A complete EMG workflow: sensor capture → microcontroller streaming → Python processing, with live plotting, noise reduction, and basic metrics for consistent tracking across trials.
+                    </p>
                   </div>
                 </div>
               </div>
 
-              <div class="cta-buttons" data-aos="fade-up" data-aos-delay="400">
-                <a href="projects.html" class="btn-view-project">View All Projects</a>
-                <a href="#robot-car" class="btn-next-project">Next Project <i class="bi bi-arrow-right"></i></a>
+              <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#emg-collapse-2">
+                    <i class="bi bi-exclamation-diamond me-2"></i> The Challenge
+                  </button>
+                </h2>
+                <div id="emg-collapse-2" class="accordion-collapse collapse" data-bs-parent="#acc-emg">
+                  <div class="accordion-body">
+                    <p>EMG is noisy and inconsistent. The main challenges were stabilizing capture, reducing motion/line noise, and producing outputs that reflect real activation rather than artifacts.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#emg-collapse-3">
+                    <i class="bi bi-award me-2"></i> What I Learned
+                  </button>
+                </h2>
+                <div id="emg-collapse-3" class="accordion-collapse collapse" data-bs-parent="#acc-emg">
+                  <div class="accordion-body">
+                    <p>How to design “lab reliable” tooling: consistent sampling, clean data paths, repeatable processing, and visuals that support decisions.</p>
+                  </div>
+                </div>
               </div>
 
             </div>
+          </div>
+
+          <div class="project-features" data-aos="fade-up" data-aos-delay="300">
+            <h3><i class="bi bi-stars"></i> Key Features</h3>
+            <div class="row g-3">
+
+              <div class="col-md-6">
+                <ul class="feature-list">
+                  <li><i class="bi bi-check2-circle"></i> Reliable EMG data streaming</li>
+                  <li><i class="bi bi-check2-circle"></i> Live plotting + monitoring</li>
+                  <li><i class="bi bi-check2-circle"></i> Filtering / noise reduction</li>
+                </ul>
+              </div>
+
+              <div class="col-md-6">
+                <ul class="feature-list">
+                  <li><i class="bi bi-check2-circle"></i> Feature extraction basics</li>
+                  <li><i class="bi bi-check2-circle"></i> Repeatable workflow</li>
+                  <li><i class="bi bi-check2-circle"></i> Portfolio-ready tooling</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="cta-buttons" data-aos="fade-up" data-aos-delay="400">
+            <a href="projects.html" class="btn-view-project">View All Projects</a>
+            <a href="#robot-car" class="btn-next-project">Next Project <i class="bi bi-arrow-right"></i></a>
           </div>
 
         </div>
       </div>
-    </section>
+
+    </div>
+  </div>
+</section>
 
     <!-- =======================================================
       PROJECT 2: ROBOT CAR
