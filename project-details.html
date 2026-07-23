@@ -66,8 +66,11 @@
           <a href="projects.html" class="btn btn-primary btn-sm"><i class="bi bi-arrow-left me-1"></i>Back to Projects</a>
 
           <span class="ms-2 small text-muted">Jump to:</span>
+          <a href="#lumalink" class="btn btn-outline-primary btn-sm">LumaLink</a>
+          <a href="#cubex" class="btn btn-outline-primary btn-sm">CubeX</a>
           <a href="#emg" class="btn btn-outline-primary btn-sm">EMG</a>
           <a href="#robot-car" class="btn btn-outline-primary btn-sm">Robot Car</a>
+          <a href="#robot-dog" class="btn btn-outline-primary btn-sm">Robot Dog</a>
           <a href="#fifo" class="btn btn-outline-primary btn-sm">FIFO</a>
           <a href="#fpga-arithmetic" class="btn btn-outline-primary btn-sm">FPGA Arithmetic</a>
           <a href="#mini-lysimeter" class="btn btn-outline-primary btn-sm">Mini-Lysimeter</a>
@@ -77,7 +80,271 @@
     </section>
 
     <!-- =======================================================
-      PROJECT 1: EMG
+      PROJECT 1: LUMALINK
+    ======================================================== -->
+    <section id="lumalink" class="portfolio-details section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>LumaLink</h2>
+        <p>A real-time optical emergency communication system running on QNX RTOS with camera-based Morse decoding and a local AI summary pipeline.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="portfolio-details-media">
+              <div class="main-image" data-aos="zoom-in">
+                <img src="assets/img/portfolio/portfolio-lumalink.svg" alt="LumaLink optical emergency communication system cover" class="img-fluid">
+              </div>
+              <div class="tech-stack-badges" data-aos="fade-up" data-aos-delay="200">
+                <span>QNX RTOS</span>
+                <span>C</span>
+                <span>Python</span>
+                <span>Raspberry Pi 5</span>
+                <span>Local AI</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="portfolio-details-content">
+              <div class="project-meta">
+                <div class="badge-wrapper">
+                  <span class="project-badge">Real-Time Embedded</span>
+                </div>
+                <div class="date-client">
+                  <div class="meta-item"><i class="bi bi-tags"></i><span>QNX • Computer Vision</span></div>
+                  <div class="meta-item"><i class="bi bi-camera"></i><span>Optical Morse Decode</span></div>
+                </div>
+              </div>
+
+              <h2 class="project-title">Emergency Messages From Light Pulses</h2>
+
+              <div class="project-overview">
+                <p class="lead">
+                  LumaLink converts text into high-speed Morse-code flashes, captures the flashes with a Raspberry Pi Camera Module 3 Wide,
+                  decodes the optical signal on QNX, and passes the result to a local Qwen/llama.cpp pipeline that generates an operator-friendly emergency summary.
+                </p>
+
+                <div class="accordion project-accordion" id="acc-lumalink">
+                  <div class="accordion-item" data-aos="fade-up">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#lumalink-collapse-1" aria-expanded="true">
+                        <i class="bi bi-clipboard-data me-2"></i> What I Built
+                      </button>
+                    </h2>
+                    <div id="lumalink-collapse-1" class="accordion-collapse collapse show" data-bs-parent="#acc-lumalink">
+                      <div class="accordion-body">
+                        <p>
+                          A receiver/transmitter system: Python generates screen-based Morse flashes, a QNX C receiver samples camera frames,
+                          decoded text is written to a local pipeline, and a dashboard launches when SOS-style emergency content is detected.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#lumalink-collapse-2">
+                        <i class="bi bi-exclamation-diamond me-2"></i> The Challenge
+                      </button>
+                    </h2>
+                    <div id="lumalink-collapse-2" class="accordion-collapse collapse" data-bs-parent="#acc-lumalink">
+                      <div class="accordion-body">
+                        <p>
+                          The system depends on deterministic frame capture. Missing only a few frames can corrupt the Morse stream,
+                          so scheduling, timing, camera thresholds, and clean handoff between C and Python matter.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#lumalink-collapse-3">
+                        <i class="bi bi-award me-2"></i> What I Learned
+                      </button>
+                    </h2>
+                    <div id="lumalink-collapse-3" class="accordion-collapse collapse" data-bs-parent="#acc-lumalink">
+                      <div class="accordion-body">
+                        <p>
+                          Real-time systems are integration problems as much as code problems: camera APIs, OS scheduling,
+                          signal thresholds, local model serving, and operator UX all have to line up.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-features" data-aos="fade-up" data-aos-delay="300">
+                <h3><i class="bi bi-stars"></i> Key Features</h3>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <ul class="feature-list">
+                      <li><i class="bi bi-check2-circle"></i> QNX camera receiver in C</li>
+                      <li><i class="bi bi-check2-circle"></i> Python Morse transmitter</li>
+                      <li><i class="bi bi-check2-circle"></i> High-speed optical signaling</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <ul class="feature-list">
+                      <li><i class="bi bi-check2-circle"></i> Local Qwen summary pipeline</li>
+                      <li><i class="bi bi-check2-circle"></i> Emergency dashboard trigger</li>
+                      <li><i class="bi bi-check2-circle"></i> Raspberry Pi 5 integration</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cta-buttons" data-aos="fade-up" data-aos-delay="400">
+                <a href="https://github.com/Omar-Alhalawani/lumalink" class="btn-view-project" target="_blank" rel="noopener">
+                  <i class="bi bi-github"></i> GitHub
+                </a>
+                <a href="#cubex" class="btn-next-project">Next Project <i class="bi bi-arrow-right"></i></a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+      PROJECT 2: CUBEX
+    ======================================================== -->
+    <section id="cubex" class="portfolio-details section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>CubeX Trio RepRap Conversion</h2>
+        <p>A discontinued CubeX Trio rebuilt into an open-source Marlin printer with modern electronics, standard filament, and repairable hardware.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="portfolio-details-media">
+              <div class="main-image" data-aos="zoom-in">
+                <img src="assets/img/portfolio/portfolio-cubex.png" alt="CubeX Trio RepRap conversion cover" class="img-fluid">
+              </div>
+              <div class="tech-stack-badges" data-aos="fade-up" data-aos-delay="200">
+                <span>Marlin</span>
+                <span>SKR V1.4 Turbo</span>
+                <span>TMC2209</span>
+                <span>UART</span>
+                <span>Hardware Debug</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="portfolio-details-content">
+              <div class="project-meta">
+                <div class="badge-wrapper">
+                  <span class="project-badge">Firmware + Hardware</span>
+                </div>
+                <div class="date-client">
+                  <div class="meta-item"><i class="bi bi-tags"></i><span>RepRap • 3D Printing</span></div>
+                  <div class="meta-item"><i class="bi bi-tools"></i><span>Reverse Engineering</span></div>
+                </div>
+              </div>
+
+              <h2 class="project-title">From Locked-Down Printer to Open Platform</h2>
+
+              <div class="project-overview">
+                <p class="lead">
+                  I replaced the CubeX Trio's proprietary control stack with a BIGTREETECH SKR V1.4 Turbo, TMC2209 drivers,
+                  a 24 V V6-style hotend, dual-Y motor control, and Marlin firmware configured for the original frame and motion system.
+                </p>
+
+                <div class="accordion project-accordion" id="acc-cubex">
+                  <div class="accordion-item" data-aos="fade-up">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#cubex-collapse-1" aria-expanded="true">
+                        <i class="bi bi-clipboard-data me-2"></i> What I Built
+                      </button>
+                    </h2>
+                    <div id="cubex-collapse-1" class="accordion-collapse collapse show" data-bs-parent="#acc-cubex">
+                      <div class="accordion-body">
+                        <p>
+                          A practical conversion path for a discontinued commercial printer: new controller, rewired motion system,
+                          UART-configured stepper drivers, thermistor/heater validation, PID tuning, and a single-extruder Bowden setup.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cubex-collapse-2">
+                        <i class="bi bi-exclamation-diamond me-2"></i> The Challenge
+                      </button>
+                    </h2>
+                    <div id="cubex-collapse-2" class="accordion-collapse collapse" data-bs-parent="#acc-cubex">
+                      <div class="accordion-body">
+                        <p>
+                          The work required preserving the useful mechanical system while replacing closed electronics:
+                          motor mapping, endstop logic, USB serial configuration, thermal safety, and future bed-leveling integration.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cubex-collapse-3">
+                        <i class="bi bi-award me-2"></i> What I Learned
+                      </button>
+                    </h2>
+                    <div id="cubex-collapse-3" class="accordion-collapse collapse" data-bs-parent="#acc-cubex">
+                      <div class="accordion-body">
+                        <p>
+                          Firmware configuration only works when the hardware story is true. This project sharpened my wiring discipline,
+                          diagnostic process, motion-system thinking, and respect for thermal protection.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-features" data-aos="fade-up" data-aos-delay="300">
+                <h3><i class="bi bi-stars"></i> Key Features</h3>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <ul class="feature-list">
+                      <li><i class="bi bi-check2-circle"></i> SKR V1.4 Turbo controller</li>
+                      <li><i class="bi bi-check2-circle"></i> TMC2209 UART setup</li>
+                      <li><i class="bi bi-check2-circle"></i> Dual-Y motor configuration</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <ul class="feature-list">
+                      <li><i class="bi bi-check2-circle"></i> Marlin 2.1.1.6 firmware</li>
+                      <li><i class="bi bi-check2-circle"></i> Hotend + thermistor testing</li>
+                      <li><i class="bi bi-check2-circle"></i> PID tuning and motion checks</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cta-buttons" data-aos="fade-up" data-aos-delay="400">
+                <a href="https://github.com/Omar-Alhalawani/CubeX-Trio-Revival" class="btn-view-project" target="_blank" rel="noopener">
+                  <i class="bi bi-github"></i> GitHub
+                </a>
+                <a href="#emg" class="btn-next-project">Next Project <i class="bi bi-arrow-right"></i></a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+      PROJECT 3: EMG
     ======================================================== -->
     <section id="emg" class="portfolio-details section">
   <div class="container section-title" data-aos="fade-up">
@@ -331,7 +598,7 @@
      rel="noopener">
     <i class="bi bi-github"></i> GitHub
   </a>
-                <a href="#fifo" class="btn-next-project">Next Project <i class="bi bi-arrow-right"></i></a>
+                <a href="#robot-dog" class="btn-next-project">Next Project <i class="bi bi-arrow-right"></i></a>
               </div>
 
             </div>
@@ -342,7 +609,139 @@
     </section>
 
 <!-- =======================================================
-  PROJECT 3: FIFO
+  PROJECT 5: ROBOT DOG
+======================================================== -->
+<section id="robot-dog" class="portfolio-details section">
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Verbal-Responsive Robot Dog</h2>
+    <p>An in-progress Arduino robotics platform that responds to voice commands, shows simple emotions on an LCD, and is being extended toward navigation and vision.</p>
+  </div>
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row gy-4">
+
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="portfolio-details-media">
+          <div class="main-image" data-aos="zoom-in">
+            <img src="assets/img/portfolio/portfolio-robot-dog.svg" alt="Verbal-responsive robot dog project cover" class="img-fluid">
+          </div>
+          <div class="tech-stack-badges" data-aos="fade-up" data-aos-delay="200">
+            <span>Arduino Uno</span>
+            <span>C++</span>
+            <span>LCD</span>
+            <span>Microphone</span>
+            <span>Sensors</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="portfolio-details-content">
+          <div class="project-meta">
+            <div class="badge-wrapper">
+              <span class="project-badge">Robotics - In Progress</span>
+            </div>
+            <div class="date-client">
+              <div class="meta-item"><i class="bi bi-tags"></i><span>Voice • Interaction</span></div>
+              <div class="meta-item"><i class="bi bi-robot"></i><span>Sensing + Navigation</span></div>
+            </div>
+          </div>
+
+          <h2 class="project-title">A Small Robot With Expressive Feedback</h2>
+
+          <div class="project-overview">
+            <p class="lead">
+              The robot dog is designed to react to commands like sit, follow, and idle, while using an LCD face to show simple emotional states.
+              The project is a practical platform for combining embedded control, sensors, user feedback, and future camera-based autonomy.
+            </p>
+
+            <div class="accordion project-accordion" id="acc-robot-dog">
+              <div class="accordion-item" data-aos="fade-up">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#robot-dog-collapse-1" aria-expanded="true">
+                    <i class="bi bi-clipboard-data me-2"></i> What I Built
+                  </button>
+                </h2>
+                <div id="robot-dog-collapse-1" class="accordion-collapse collapse show" data-bs-parent="#acc-robot-dog">
+                  <div class="accordion-body">
+                    <p>
+                      A modular Arduino codebase for robot behaviors, LCD expression output, and sensor-driven reactions.
+                      The hardware plan includes ultrasonic/motion sensing, microphone input, and a future camera module.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#robot-dog-collapse-2">
+                    <i class="bi bi-exclamation-diamond me-2"></i> The Challenge
+                  </button>
+                </h2>
+                <div id="robot-dog-collapse-2" class="accordion-collapse collapse" data-bs-parent="#acc-robot-dog">
+                  <div class="accordion-body">
+                    <p>
+                      The main challenge is making interaction feel responsive while keeping robot behavior stable:
+                      command parsing, sensor noise, motor timing, and display updates all need to cooperate on a small controller.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#robot-dog-collapse-3">
+                    <i class="bi bi-award me-2"></i> What I Am Exploring
+                  </button>
+                </h2>
+                <div id="robot-dog-collapse-3" class="accordion-collapse collapse" data-bs-parent="#acc-robot-dog">
+                  <div class="accordion-body">
+                    <p>
+                      Future work includes fuller speech recognition, onboard speech output, camera-based perception,
+                      and autonomous navigation so the platform can become more than a command-response prototype.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-features" data-aos="fade-up" data-aos-delay="300">
+            <h3><i class="bi bi-stars"></i> Key Features</h3>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <ul class="feature-list">
+                  <li><i class="bi bi-check2-circle"></i> Voice-command behavior modes</li>
+                  <li><i class="bi bi-check2-circle"></i> LCD expression feedback</li>
+                  <li><i class="bi bi-check2-circle"></i> Obstacle and motion sensing</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul class="feature-list">
+                  <li><i class="bi bi-check2-circle"></i> Arduino C++ firmware</li>
+                  <li><i class="bi bi-check2-circle"></i> Modular behavior design</li>
+                  <li><i class="bi bi-check2-circle"></i> Planned vision + speech output</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="cta-buttons" data-aos="fade-up" data-aos-delay="400">
+            <a href="https://github.com/Omar-Alhalawani/verbal-responsive-robot-dog" class="btn-view-project" target="_blank" rel="noopener">
+              <i class="bi bi-github"></i> GitHub
+            </a>
+            <a href="#fifo" class="btn-next-project">Next Project <i class="bi bi-arrow-right"></i></a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =======================================================
+  PROJECT 6: FIFO
 ======================================================== -->
 <section id="fifo" class="portfolio-details section">
   <div class="container section-title" data-aos="fade-up">
@@ -473,7 +872,7 @@
           </div>
 
           <div class="cta-buttons" data-aos="fade-up" data-aos-delay="400">
-           <a href="https://github.com/Omar-Alhalawani/REPO_NAME"
+           <a href="https://github.com/Omar-Alhalawani/sync-fifo-rtl-verification"
      class="btn-view-project"
      target="_blank"
      rel="noopener">
@@ -622,7 +1021,7 @@
           </div>
 
           <div class="cta-buttons" data-aos="fade-up" data-aos-delay="400">
-            <a href="https://github.com/Omar-Alhalawani/REPO_NAME"
+            <a href="https://github.com/Omar-Alhalawani/FPGA-Based-Arithmetic-Display-System"
      class="btn-view-project"
      target="_blank"
      rel="noopener">
@@ -943,7 +1342,7 @@
      rel="noopener">
     <i class="bi bi-github"></i> GitHub
   </a>
-            <a href="#emg" class="btn-next-project">Back to Top <i class="bi bi-arrow-up"></i></a>
+            <a href="#lumalink" class="btn-next-project">Back to Top <i class="bi bi-arrow-up"></i></a>
           </div>
 
         </div>
