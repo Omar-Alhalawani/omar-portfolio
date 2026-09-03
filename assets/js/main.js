@@ -1,225 +1,61 @@
-/**
-* Template Name: FolioOne
-* Template URL: https://bootstrapmade.com/folioone-bootstrap-portfolio-website-template/
-* Updated: Aug 23 2025 with Bootstrap v5.3.7
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+(() => {
+  'use strict';
+  const $ = (selector, root = document) => root.querySelector(selector);
+  const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let previousFocus;
 
-(function() {
-  "use strict";
+  $$('[data-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
+  const header = $('.site-header');
+  const setScroll = () => {
+    header?.classList.toggle('scrolled', scrollY > 12);
+    const height = document.documentElement.scrollHeight - innerHeight;
+    document.documentElement.style.setProperty('--progress', `${height > 0 ? (scrollY / height) * 100 : 0}%`);
+  };
+  addEventListener('scroll', setScroll, { passive: true }); setScroll();
 
-  /**
-   * Apply .scrolled class to the body as the page is scrolled down
-   */
-  function toggleScrolled() {
-    const selectBody = document.querySelector('body');
-    const selectHeader = document.querySelector('#header');
-    if (!selectHeader.classList.contains('scroll-up-sticky') &&
-        !selectHeader.classList.contains('sticky-top') &&
-        !selectHeader.classList.contains('fixed-top')) return;
-    window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
+  const navToggle = $('.nav-toggle'); const nav = $('#site-nav');
+  navToggle?.addEventListener('click', () => {
+    const open = nav.classList.toggle('open'); navToggle.setAttribute('aria-expanded', open);
+  });
+  $$('a', nav || document).forEach(a => a.addEventListener('click', () => { nav?.classList.remove('open'); navToggle?.setAttribute('aria-expanded', 'false'); }));
+
+  function ensureDialogs() {
+    if (!$('[data-command-dialog]')) document.body.insertAdjacentHTML('beforeend', `<div class="dialog-backdrop" data-command-dialog hidden><section class="command-dialog" role="dialog" aria-modal="true" aria-labelledby="command-title"><div><label id="command-title" for="command-input">COMMAND // NAVIGATE</label><button aria-label="Close command palette" data-close-dialog>×</button></div><input id="command-input" type="search" placeholder="Type a command…" autocomplete="off"><ul class="command-list" role="listbox"></ul><p>↑ ↓ to navigate <b>·</b> Enter to select <b>·</b> Esc to close</p></section></div>`);
   }
+  ensureDialogs();
+  const commandDialog = $('[data-command-dialog]');
+  function openDialog(dialog, focusElement) { previousFocus = document.activeElement; dialog.hidden = false; document.body.style.overflow = 'hidden'; (focusElement || $('[data-close-dialog]', dialog))?.focus(); }
+  function closeDialog(dialog) { if (!dialog || dialog.hidden) return; dialog.hidden = true; document.body.style.overflow = ''; previousFocus?.focus(); }
+  $$('[data-close-dialog]').forEach(button => button.addEventListener('click', () => closeDialog(button.closest('.dialog-backdrop'))));
+  $$('.dialog-backdrop').forEach(dialog => dialog.addEventListener('click', event => { if (event.target === dialog) closeDialog(dialog); }));
 
-  document.addEventListener('scroll', toggleScrolled);
-  window.addEventListener('load', toggleScrolled);
-
-  /**
-   * Mobile nav toggle
-   */
-  const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
-  function mobileNavToogle() {
-    document.querySelector('body').classList.toggle('mobile-nav-active');
-    mobileNavToggleBtn.classList.toggle('bi-list');
-    mobileNavToggleBtn.classList.toggle('bi-x');
-  }
-
-  if (mobileNavToggleBtn) {
-    mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
-  }
-
-  /**
-   * Hide mobile nav on hash links
-   */
-  document.querySelectorAll('#navmenu a').forEach(navmenu => {
-    navmenu.addEventListener('click', () => {
-      if (document.querySelector('.mobile-nav-active')) mobileNavToogle();
-    });
+  const commands = [
+    ['Go Home', 'index.html'], ['Open Experience', 'experience.html'], ['View Projects', 'projects.html'], ['Open FIFO Project', 'project-details.html#fifo'], ['Open FPGA Arithmetic Project', 'project-details.html#fpga-arithmetic'], ['Open EMG Project', 'project-details.html#emg'], ['Open LumaLink', 'project-details.html#lumalink'], ['View Resume', 'resume.html'], ['Download Resume', 'assets/resume/Resume_Omar_Alhalawani.pdf'], ['Open GitHub', 'https://github.com/Omar-Alhalawani'], ['Open LinkedIn', 'https://linkedin.com/in/omar-alhalawani'], ['Contact Omar', 'contact.html']
+  ];
+  const commandInput = $('#command-input', commandDialog); const commandList = $('.command-list', commandDialog); let selection = 0; let visibleCommands = commands;
+  function renderCommands(query = '') { visibleCommands = commands.filter(([name]) => name.toLowerCase().includes(query.toLowerCase())); selection = Math.min(selection, Math.max(visibleCommands.length - 1, 0)); commandList.innerHTML = visibleCommands.length ? visibleCommands.map(([name], index) => `<li><button class="${index === selection ? 'active' : ''}" role="option" aria-selected="${index === selection}" data-command="${index}">${name}</button></li>`).join('') : '<li><button disabled>No matching command</button></li>'; }
+  function executeCommand(index) { const [, target] = visibleCommands[index]; if (!target) return; closeDialog(commandDialog); if (/^https?:/.test(target)) open(target, '_blank', 'noopener'); else location.href = target; }
+  function openCommand() { selection = 0; commandInput.value = ''; renderCommands(); openDialog(commandDialog, commandInput); }
+  $$('[data-open-command]').forEach(button => button.addEventListener('click', openCommand));
+  commandInput?.addEventListener('input', () => { selection = 0; renderCommands(commandInput.value); });
+  commandList?.addEventListener('click', event => { const button = event.target.closest('[data-command]'); if (button) executeCommand(Number(button.dataset.command)); });
+  document.addEventListener('keydown', event => {
+    const typing = /input|textarea|select/i.test(document.activeElement?.tagName || '');
+    if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k' && !typing) { event.preventDefault(); openCommand(); return; }
+    if (event.key === 'Escape') { closeDialog(commandDialog); return; }
+    if (!commandDialog.hidden) { if (event.key === 'ArrowDown' || event.key === 'ArrowUp') { event.preventDefault(); selection = (selection + (event.key === 'ArrowDown' ? 1 : -1) + visibleCommands.length) % visibleCommands.length; renderCommands(commandInput.value); } if (event.key === 'Enter') { event.preventDefault(); executeCommand(selection); } }
   });
 
-  /**
-   * Toggle mobile dropdowns
-   */
-  document.querySelectorAll('.navmenu .toggle-dropdown').forEach(toggle => {
-    toggle.addEventListener('click', function(e) {
-      e.preventDefault();
-      this.parentNode.classList.toggle('active');
-      this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
-      e.stopImmediatePropagation();
-    });
-  });
 
-  /**
-   * Preloader
-   */
-  const preloader = document.querySelector('#preloader');
-  if (preloader) {
-    window.addEventListener('load', () => preloader.remove());
-  }
+  $$('.filter-bar [data-filter]').forEach(button => button.addEventListener('click', () => { $$('.filter-bar button').forEach(b => b.classList.toggle('active', b === button)); const filter = button.dataset.filter; $$('[data-project-grid] .project-card').forEach(card => card.classList.toggle('hidden', filter !== 'all' && card.dataset.category !== filter)); }));
+  if ('IntersectionObserver' in window) { const observer = new IntersectionObserver(entries => entries.forEach(entry => entry.target.classList.toggle('active', entry.isIntersecting)), { threshold: .3 }); $$('.role').forEach(role => observer.observe(role)); }
+  const tilt = $('[data-tilt]'); if (tilt && !reduceMotion && matchMedia('(pointer:fine)').matches) { tilt.addEventListener('pointermove', event => { const rect = tilt.getBoundingClientRect(); tilt.style.transform = `perspective(900px) rotateX(${(rect.height / 2 - (event.clientY - rect.top)) / 20}deg) rotateY(${((event.clientX - rect.left) - rect.width / 2) / 20}deg)`; }); tilt.addEventListener('pointerleave', () => { tilt.style.transform = ''; }); }
+  const form = $('.contact-form'); form?.addEventListener('submit', async event => { event.preventDefault(); const status = $('.form-status', form); const submit = $('button[type="submit"]', form); submit.disabled = true; status.textContent = 'Sending…'; try { const response = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } }); if (!response.ok) throw new Error(); form.reset(); status.textContent = 'Message transmitted. Thank you.'; } catch { status.textContent = 'Transmission failed. Please use the email link instead.'; } finally { submit.disabled = false; } });
 
-  /**
-   * Scroll top button
-   */
-  let scrollTop = document.querySelector('.scroll-top');
-  function toggleScrollTop() {
-    if (scrollTop) {
-      window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
-    }
-  }
-
-  scrollTop?.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-  window.addEventListener('load', toggleScrollTop);
-  document.addEventListener('scroll', toggleScrollTop);
-
-  /**
-   * AOS
-   */
-  function aosInit() {
-    AOS.init({
-      duration: 600,
-      easing: 'ease-in-out',
-      once: true,
-      mirror: false
-    });
-  }
-  window.addEventListener('load', aosInit);
-
-  /**
-   * typed.js
-   */
-  const selectTyped = document.querySelector('.typed');
-  if (selectTyped) {
-    let typed_strings = selectTyped.getAttribute('data-typed-items').split(',');
-    new Typed('.typed', {
-      strings: typed_strings,
-      loop: true,
-      typeSpeed: 100,
-      backSpeed: 50,
-      backDelay: 2000
-    });
-  }
-
-  /**
-   * Skills animation
-   */
-  document.querySelectorAll('.skills-animation').forEach(item => {
-    new Waypoint({
-      element: item,
-      offset: '80%',
-      handler: function() {
-        let progress = item.querySelectorAll('.progress .progress-bar');
-        progress.forEach(el => el.style.width = el.getAttribute('aria-valuenow') + '%');
-      }
-    });
-  });
-
-  /**
-   * Pure Counter
-   */
-  new PureCounter();
-
-  /**
-   * Swiper sliders
-   */
-  function initSwiper() {
-    document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
-      let config = JSON.parse(
-        swiperElement.querySelector(".swiper-config").innerHTML.trim()
-      );
-      new Swiper(swiperElement, config);
-    });
-  }
-  window.addEventListener("load", initSwiper);
-
-  /**
-   * Isotope filters
-   */
-  document.querySelectorAll('.isotope-layout').forEach(isotopeItem => {
-    let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
-    let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
-    let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
-
-    let initIsotope;
-    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
-      initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
-        itemSelector: '.isotope-item',
-        layoutMode: layout,
-        filter: filter,
-        sortBy: sort
-      });
-    });
-
-    isotopeItem.querySelectorAll('.isotope-filters li').forEach(filterBtn => {
-      filterBtn.addEventListener('click', function() {
-        isotopeItem.querySelector('.filter-active').classList.remove('filter-active');
-        this.classList.add('filter-active');
-        initIsotope.arrange({ filter: this.getAttribute('data-filter') });
-        aosInit();
-      });
-    });
-  });
-
-  /**
-   * glightbox
-   */
-  const glightbox = GLightbox({ selector: '.glightbox' });
-
-    /* ------------------------------------------------------------------
-      FORM HANDLER — UPDATED FOR FORMSPREE
-  ------------------------------------------------------------------ */
-  document.addEventListener("DOMContentLoaded", function () {
-    const form = document.querySelector(".php-email-form");
-    if (!form) return;
-
-    form.addEventListener("submit", async function (e) {
-      e.preventDefault();
-      e.stopImmediatePropagation(); // ⬅ block the old template handler
-
-      // UI elements
-      const loading = form.querySelector(".loading");
-      const errorMessage = form.querySelector(".error-message");
-      const sentMessage = form.querySelector(".sent-message");
-
-      loading.style.display = "block";
-      errorMessage.style.display = "none";
-      sentMessage.style.display = "none";
-
-      try {
-        const response = await fetch("https://formspree.io/f/xkgekqrw", {
-          method: "POST",
-          body: new FormData(form),
-          headers: { Accept: "application/json" }
-        });
-
-        loading.style.display = "none";
-
-        if (response.ok) {
-          sentMessage.style.display = "block";
-          form.reset();
-        } else {
-          const result = await response.json();
-          errorMessage.textContent = result.error || "Something went wrong.";
-          errorMessage.style.display = "block";
-        }
-      } catch (err) {
-        loading.style.display = "none";
-        errorMessage.textContent = "Error sending message. Please try again.";
-        errorMessage.style.display = "block";
-      }
-    });
-  });
+  const canvas = $('#circuit-canvas'); if (!canvas || reduceMotion) return;
+  const context = canvas.getContext('2d'); let points = [], raf, last = 0;
+  function resize() { const ratio = Math.min(devicePixelRatio || 1, 1.5); canvas.width = innerWidth * ratio; canvas.height = innerHeight * ratio; canvas.style.width = `${innerWidth}px`; canvas.style.height = `${innerHeight}px`; context.setTransform(ratio, 0, 0, ratio, 0, 0); const count = innerWidth < 600 ? 16 : 30; points = Array.from({ length: count }, () => ({ x: Math.random() * innerWidth, y: Math.random() * innerHeight, vx: (Math.random() - .5) * .09, vy: (Math.random() - .5) * .09 })); }
+  function draw(time) { if (document.hidden) { raf = requestAnimationFrame(draw); return; } if (time - last > 32) { context.clearRect(0, 0, innerWidth, innerHeight); points.forEach(p => { p.x += p.vx; p.y += p.vy; if (p.x < 0 || p.x > innerWidth) p.vx *= -1; if (p.y < 0 || p.y > innerHeight) p.vy *= -1; context.fillStyle = 'rgba(103,232,249,.35)'; context.fillRect(p.x - 1, p.y - 1, 2, 2); }); for (let i = 0; i < points.length; i++) for (let j = i + 1; j < points.length; j++) { const a = points[i], b = points[j], dx = a.x - b.x, dy = a.y - b.y; if (Math.abs(dx) < 130 && Math.abs(dy) < 80) { context.strokeStyle = 'rgba(103,232,249,.055)'; context.beginPath(); context.moveTo(a.x, a.y); context.lineTo(b.x, a.y); context.lineTo(b.x, b.y); context.stroke(); } } last = time; } raf = requestAnimationFrame(draw); }
+  resize(); addEventListener('resize', resize, { passive: true }); raf = requestAnimationFrame(draw);
 })();
