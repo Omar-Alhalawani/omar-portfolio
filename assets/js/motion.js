@@ -26,7 +26,7 @@
   };
   const hero = () => {
     const core = $('.hero-core'); const pageHero = $('.hero'); if (!core || !pageHero) return;
-    pageHero.classList.add('motion-hero');
+    core.addEventListener('animationend', event => { if (event.animationName === 'core-online') { core.style.animation = 'none'; core.style.opacity = '1'; core.style.transform = 'scale(1)'; } }, { once: true }); pageHero.classList.add('motion-hero');
     if (!finePointer || reduce) return;
     let frame;
     core.addEventListener('pointermove', event => { const rect = core.getBoundingClientRect(), x = (event.clientX - rect.left) / rect.width - .5, y = (event.clientY - rect.top) / rect.height - .5; cancelAnimationFrame(frame); frame = requestAnimationFrame(() => { core.style.setProperty('--light-x', `${(x + .5) * 100}%`); core.style.setProperty('--light-y', `${(y + .5) * 100}%`); core.style.setProperty('--motion-x', `${x * 12}px`); core.style.setProperty('--motion-y', `${y * 12}px`); }); });
