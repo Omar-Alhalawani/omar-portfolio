@@ -1,78 +1,51 @@
-# Omar Alhalawani — Personal Portfolio
+# Omar Alhalawani  -  OA // SYSTEMS
 
-Welcome to the repository for my personal engineering portfolio website.
+Static engineering portfolio for Omar Alhalawani, a Computer Systems Engineering student at Carleton University focused on ASIC verification, RTL/digital design, embedded systems, and engineering automation.
 
-🌐 **Live Website:**  
-👉 [https://omar-alhalawani.github.io/omar-portfolio/](https://omar-alhalawani.github.io/omar-portfolio/)
+Live: [omar-alhalawani.github.io/omar-portfolio](https://omar-alhalawani.github.io/omar-portfolio/)
 
-This site showcases my work in embedded systems, robotics, FPGA/digital logic, Python tooling, and community leadership.
+## Pages
 
----
+- `index.html`  -  engineering hero, Ciena feature, selected projects, systems stack
+- `experience.html`  -  public-safe ASIC verification, instrumentation, and teaching experience
+- `projects.html` / `project-details.html`  -  bento project archive and technical summaries
+- `about.html`  -  engineering identity, education, and evidence-linked skills
+- `resume.html`  -  embedded downloadable PDF resume
+- `contact.html`  -  direct links and Formspree contact form
+- `404.html`  -  custom signal-lost page
 
-## 🚀 Features
+`services.html` is retained as a compatibility redirect to Experience.
 
-- Modern landing page with hero section  
-- About + skills breakdown  
-- Full resume section  
-- Engineering project portfolio  
-- Project detail pages  
-- Stats counters  
-- Responsive design (mobile/tablet/desktop)  
-- Contact form (FormSubmit integration)
+## Features
 
----
+- Midnight obsidian / electric cyan / ultraviolet visual system
+- Responsive CSS Grid and native mobile navigation
+- Lightweight Canvas circuit background that respects reduced motion and hidden tabs
+- `Ctrl/Cmd + K` keyboard command palette
+- `FAULT//HUNT` fullscreen verification-inspired campaign, unlocked through the BUILD label and persisted locally
+- Scroll progress signal, profile-core tilt, project filters, and experience activation
+- Semantic landmarks, skip link, keyboard-visible controls, modal focus restoration, and reduced-motion support
 
-## 🛠️ Built With
+## Stack
 
-- **HTML5**  
-- **CSS3**  
-- **JavaScript**  
-- **Bootstrap 5**  
-- **AOS (Animate On Scroll)**  
-- **Glightbox**  
-- **PureCounter.js**  
-- **Hosted via GitHub Pages**
+Zero-build static HTML, CSS, and vanilla JavaScript. Google Fonts are loaded for Space Grotesk, Inter, and JetBrains Mono. The site is ready for GitHub Pages under `/omar-portfolio/`; all local links are relative.
 
----
+## Run locally
 
-## 📂 Structure
+```powershell
+python -m http.server 8000
+```
 
-.
-├── index.html
+Then open `http://localhost:8000/`.
 
-├── about.html
+## Structure
 
-├── portfolio.html
+```text
+assets/
+  css/main.css       # design tokens, layout, responsive system
+  js/main.js         # UI, command palette, game, circuit canvas
+  img/               # real project and profile media
+  resume/            # downloadable PDF resume
+```
 
-├── portfolio-details.html
-
-├── resume.html
-
-├── services.html
-
-├── contact.html
-
-├── assets/
-
-│ ├── css/
-
-│ ├── js/
-
-│ ├── img/
-
-│ ├── vendor/
-
-└── README.md
-
----
-
-## 📬 Contact
-
-- **Email:** omar.alhalawani2006@gmail.com  
-- **Website:** [https://omar-alhalawani.github.io/omar-portfolio/](https://omar-alhalawani.github.io/omar-portfolio/)
-
----
-
-## 📄 License
-
-Personal project — feel free to explore the code for learning purposes.
+No analytics, cookies, API keys, or build tooling are required.
