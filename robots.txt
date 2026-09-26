@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://omar-alhalawani.github.io/omar-portfolio/sitemap.xml
