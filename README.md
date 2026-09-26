@@ -58,7 +58,7 @@ A parameterized synchronous FIFO implemented in SystemVerilog and validated with
 
 ## FPGA Arithmetic Display System
 
-An FPGA-based arithmetic system built around a structured datapath and controller FSM with seven-segment output.
+An FPGA-based arithmetic system that captures operands from DIP switches, performs add/subtract operations, and drives the result on board LEDs.
 
 **Focus:**
 `Verilog` `FPGA` `FSM` `Datapath` `Vivado`
@@ -156,7 +156,7 @@ Technologies such as:
 
 can be visually connected to the projects and experience where they are actually used.
 
-The goal is to make technical skills **evidence-based** rather than represent them using arbitrary percentage bars.
+The goal is to make it easier to explore related skills and projects.
 
 ---
 
